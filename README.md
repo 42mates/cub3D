@@ -1,2 +1,2 @@
-# cub3d
- Repo for the cub3d project from 42 school by @marinsucks and @ku-alexej. 
+# cub3D
+ Repo for the cub3D project from 42 school by @marinsucks and @ku-alexej. 
