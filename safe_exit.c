@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   safe_exit.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/28 15:15:39 by mbecker           #+#    #+#             */
-/*   Updated: 2024/08/29 17:06:11 by mbecker          ###   ########.fr       */
+/*   Created: 2024/08/29 17:06:28 by mbecker           #+#    #+#             */
+/*   Updated: 2024/08/29 17:07:19 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int	main(int ac, char **av)
+void	safe_exit(t_data *data)
 {
-	t_data data;
-
-	if (!parsing(ac, av, &data))
-		printf("Parsing OK\n");
-
-	safe_exit(&data);
-	return (0);
+	free(data->txtr.no);
+	free(data->txtr.so);
+	free(data->txtr.we);
+	free(data->txtr.ea);
 }

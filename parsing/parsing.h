@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parsing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/28 15:15:39 by mbecker           #+#    #+#             */
-/*   Updated: 2024/08/29 17:06:11 by mbecker          ###   ########.fr       */
+/*   Created: 2024/08/29 15:56:16 by mbecker           #+#    #+#             */
+/*   Updated: 2024/08/29 15:57:07 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#ifndef PARSING_H
+# define PARSING_H
 
-int	main(int ac, char **av)
-{
-	t_data data;
+# include "../cub3d.h"
 
-	if (!parsing(ac, av, &data))
-		printf("Parsing OK\n");
+int		error(char *msg1, char *msg2);
+int		get_elements(t_data *data);
 
-	safe_exit(&data);
-	return (0);
-}
+#endif

@@ -6,7 +6,7 @@
 #    By: mbecker <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/28 15:03:26 by mbecker           #+#    #+#              #
-#    Updated: 2024/08/28 18:54:20 by mbecker          ###   ########.fr        #
+#    Updated: 2024/08/29 17:08:05 by mbecker          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,9 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
 
 SRC =	main.c \
-		parsing/parsing.c
+		safe_exit.c \
+		parsing/parsing.c \
+		parsing/elements.c
 
 all: $(NAME)
 

@@ -1,24 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   define.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/28 15:15:39 by mbecker           #+#    #+#             */
-/*   Updated: 2024/08/29 17:06:11 by mbecker          ###   ########.fr       */
+/*   Created: 2024/08/29 10:40:57 by mbecker           #+#    #+#             */
+/*   Updated: 2024/08/29 12:14:43 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#ifndef DEFINE_H
+# define DEFINE_H
 
-int	main(int ac, char **av)
-{
-	t_data data;
+# define PROGRAM_NAME "cub3d"
 
-	if (!parsing(ac, av, &data))
-		printf("Parsing OK\n");
+# define SPACES " \t\r\f\v"
+# define SPACES_NL " \t\r\f\v\n"
 
-	safe_exit(&data);
-	return (0);
-}
+#endif

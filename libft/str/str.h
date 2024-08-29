@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:48:31 by mbecker           #+#    #+#             */
-/*   Updated: 2024/03/25 11:58:52 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/08/29 13:39:34 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define STR_H
 
 # include "../libft.h"
+
+char		*avoid_space(char *str, int include_nl);
 
 int			ft_atoi(const char *str);
 
@@ -71,6 +73,7 @@ int			ft_strset(char *s, char *set);
 
 char		*ft_strstr(const char *haystack, const char *needle);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t n);
+char		*ft_strrstr(const char *haystack, const char *needle);
 //ft_strstr.c
 
 char		*ft_strtrim(char const *s1, char const *set);

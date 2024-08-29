@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:48:19 by mbecker           #+#    #+#             */
-/*   Updated: 2024/08/28 18:17:13 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/08/29 11:54:23 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # include "../libft.h"
 
-size_t		ft_strlen(char *s);
+size_t		ft_strlen(const char *s);
 size_t		ft_tablen(char **tab);
 short int	ft_numlen(long long num);
 short int	ft_numlen_base(unsigned long num, unsigned int baselen);

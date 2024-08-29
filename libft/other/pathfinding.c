@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/08 15:12:54 by mbecker           #+#    #+#             */
-/*   Updated: 2024/02/19 12:29:13 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/08/29 11:52:49 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_dfs(char **map, int i, int j, char *notwalls)
 	int	n;
 
 	m = ft_strlen(*map);
-	n = ft_tablen((const char **)map);
+	n = ft_tablen(map);
 	if (i < 0 || i >= n || j < 0 || j >= m
 		|| !ft_strchr(notwalls, map[i][j])
 		|| map[i][j] == '~')
