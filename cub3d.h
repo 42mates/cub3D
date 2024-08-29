@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:16:39 by mbecker           #+#    #+#             */
-/*   Updated: 2024/08/28 16:20:37 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/08/29 13:50:29 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@
 #include <sys/time.h>   // for gettimeofday
 #include <math.h>       // for math functions
 
+# include "defines.h"
+# include "enum.h"
 # include "libft/libft.h"
 # include "structs.h"
 

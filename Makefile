@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mbecker <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/28 15:03:26 by mbecker           #+#    #+#              #
-#    Updated: 2024/08/28 18:54:20 by mbecker          ###   ########.fr        #
+#    Updated: 2024/08/29 13:37:08 by akurochk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,8 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
 
 SRC =	main.c \
-		parsing/parsing.c
+		parsing/parsing.c \
+		main_loop/main_loop.c
 
 all: $(NAME)
 

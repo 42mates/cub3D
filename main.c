@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:15:39 by mbecker           #+#    #+#             */
-/*   Updated: 2024/08/28 18:52:49 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/08/29 13:23:16 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,16 +80,14 @@ int	main(int ac, char **av)
 	printf("WE: %d\n", get_texturex(map, "WE"));
 	printf("EA: %d\n", get_texturex(map, "EA"));
 
-
 	return (0);
-
-
-
-
 
 	t_data data;
 
+	// init_data(&data);
+	// args_check(ac, av, &data)
 	parsing(ac, av, &data);
+	main_loop(&data);
 
 	return (0);
 }
