@@ -6,7 +6,7 @@
 /*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:05:39 by akurochk          #+#    #+#             */
-/*   Updated: 2024/08/29 14:22:59 by akurochk         ###   ########.fr       */
+/*   Updated: 2024/08/29 16:45:20 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@ static void get_view(t_data *data, char c)
 	if (c == 'N')
 		data->dir_v = 0.5f * M_PI;
 	else if (c == 'E')
-		data->dir_v = 0.0f;
+		data->dir_v = 0.0f * M_PI;
 	else if (c == 'W')
-		data->dir_v = M_PIf
+		data->dir_v = 1.0f * M_PI;
 	else if (c == 'S')
 		data->dir_v = -0.5f * M_PI;
 }
@@ -33,7 +33,7 @@ void get_position(t_data *data)
 	while(++i , data->map_l)		// map_l is number of lines in the map
 	{
 		j = -1;
-		while (data->map[i][++j])	// hope line ended with '\0'
+		while (data->map[i][++j])	// hope lines ended with '\0'
 		{
 			if (ft_strchr("NEWS", data->map[i][j]))
 			{

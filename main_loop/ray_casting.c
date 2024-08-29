@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   handle_destroy.c                                   :+:      :+:    :+:   */
+/*   ray_casting.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 14:27:42 by akurochk          #+#    #+#             */
-/*   Updated: 2024/08/29 14:55:33 by akurochk         ###   ########.fr       */
+/*   Created: 2024/08/29 17:15:04 by akurochk          #+#    #+#             */
+/*   Updated: 2024/08/29 17:22:40 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-static void	free_data(t_data *data)
+// to get the distance to the walls we need angle and data
+float	ray_scane(float a, t_data *data)
 {
-	// free all malloced data: map, pathes etc.
-	free(data);
-}
+	// BEER please
+	return (0.0f);
+};
 
-int	handle_destroy(t_data *data)
+// to draw the walls
+void	ray_casting(t_data *data)
 {
-	if (data->win)
-		mlx_destroy_window(data->mlx, data->win);
-	// destroy all images of extra textures: walls, nps, environment etc.
-	free_data(data);
-	exit(0);
-}
+	(void)data;
+	// BEER please 
+};
