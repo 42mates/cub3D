@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:41:56 by mbecker           #+#    #+#             */
-/*   Updated: 2024/08/30 17:05:51 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/08/30 17:23:54 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,24 @@ int	error(char *msg1, char *msg2)
 	return (1);
 }
 
+int	parse_file(t_data *data)
+{
+	char	**map;
+	int		map_start;
+
+	map = get_file(data->mapfd);
+	if (!map)
+		return (error("init_data()", "error retrieving file"));
+	close(data->mapfd);
+	map_start = parse_elements(map, data);
+	if (map_start == -1)
+		return (freetab(map, TRUE), 1);
+	if (parse_map(map, data, map_start))
+		return (freetab(map, TRUE), 1);
+	freetab(map, TRUE);
+	return (0);
+}
+
 int	parsing(int ac, char **av, t_data *data)
 {
 	char	*ptr;
@@ -46,7 +64,7 @@ int	parsing(int ac, char **av, t_data *data)
 	data->mapfd = open(av[1], O_RDONLY);
 	if (data->mapfd == -1)
 		return (error(av[1], strerror(errno)));
-	if (init_data(data))
+	if (parse_file(data))
 		return (1);
 	return (0);
 }

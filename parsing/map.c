@@ -1,24 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.h                                          :+:      :+:    :+:   */
+/*   map.c                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 15:56:16 by mbecker           #+#    #+#             */
-/*   Updated: 2024/08/30 17:24:18 by mbecker          ###   ########.fr       */
+/*   Created: 2024/08/30 12:45:46 by mbecker           #+#    #+#             */
+/*   Updated: 2024/08/30 17:25:34 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PARSING_H
-# define PARSING_H
+#include "../cub3d.h"
+#include "parsing.h"
 
-# include "../cub3d.h"
+int	parse_map(char **map, t_data *data, int map_start)
+{
+	(void)map;
+	(void)data;
+	(void)map_start;
 
-int		error(char *msg1, char *msg2);
-
-int		parse_elements(char **map, t_data *data);
-
-int		parse_map(char **map, t_data *data, int map_start);
-
-#endif
+	return (0);
+}
