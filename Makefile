@@ -6,7 +6,7 @@
 #    By: mbecker <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/28 15:03:26 by mbecker           #+#    #+#              #
-#    Updated: 2024/08/29 17:08:05 by mbecker          ###   ########.fr        #
+#    Updated: 2024/08/30 12:04:16 by mbecker          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,7 +22,7 @@ SRC =	main.c \
 
 all: $(NAME)
 
-$(NAME): libft
+$(NAME): mlx libft
 	@if [ ! -f $(NAME) ]; \
 		then $(CC) $(CFLAGS) -o $(NAME) $(SRC) -Llibft -lft;\
 		echo "$(LGREEN)./$(GREEN)$(NAME)$(LGREEN) ready.$(NC)";\
@@ -45,11 +45,11 @@ libft:
 
 mlx:
 	@if [ ! -d minilibx-linux ]; \
-		then echo "$(YELLOW)Downloading minilibx..."; \
+		then echo "$(LYELLOW)Downloading $(YELLOW)minilibx$(LYELLOW)...$(NC)"; \
 		git clone https://github.com/42Paris/minilibx-linux.git >/dev/null 2>&1; \
 	fi
 	@if [ ! -f minilibx-linux/libmlx_Linux.a ];\
-		then echo "$(YELLOW)Compiling minilibx..."; \
+		then echo "$(LYELLOW)Compiling $(YELLOW)minilibx$(LYELLOW)...$(NC)"; \
 		make -C ./minilibx-linux all >/dev/null 2>&1; \
 	fi
 

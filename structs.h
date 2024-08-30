@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:20:15 by mbecker           #+#    #+#             */
-/*   Updated: 2024/08/29 17:26:17 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/08/30 12:01:36 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 
 typedef struct s_map_elem
 {
-	char	*no; //north texture path
-	char	*so; //south texture path
-	char	*we; //west texture path
-	char	*ea; //east texture path
-	int		f; //floor rgb value
-	int		c; //ceiling rgb value
+	char	*no;
+	char	*so;
+	char	*we;
+	char	*ea;
+	int		f;
+	int		c;
 }		t_map_elem;
 
 typedef struct s_data

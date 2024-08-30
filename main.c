@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:15:39 by mbecker           #+#    #+#             */
-/*   Updated: 2024/08/29 17:06:11 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/08/30 12:02:01 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,10 @@
 
 int	main(int ac, char **av)
 {
-	t_data data;
+	t_data	data;
 
 	if (!parsing(ac, av, &data))
 		printf("Parsing OK\n");
-
 	safe_exit(&data);
 	return (0);
 }
