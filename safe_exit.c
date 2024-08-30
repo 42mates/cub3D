@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 17:06:28 by mbecker           #+#    #+#             */
-/*   Updated: 2024/08/30 12:00:36 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/08/30 16:33:05 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 void	safe_exit(t_data *data)
 {
-	free(data->txtr.no);
-	free(data->txtr.so);
-	free(data->txtr.we);
-	free(data->txtr.ea);
+	int	i;
+
+	i = 0;
+	while (i < 4)
+		free(data->textures[i++]);
 }

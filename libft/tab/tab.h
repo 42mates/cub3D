@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/23 16:28:57 by mbecker           #+#    #+#             */
-/*   Updated: 2024/02/23 16:28:58 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/08/30 14:14:52 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,7 @@
 char		**ft_tabdup(char **tab);
 
 char		**ft_tabjoin(char **tab, char *str, int free_tab, int free_str);
+
+int			ft_tabfind(char *needle, char **haystack);
 
 #endif

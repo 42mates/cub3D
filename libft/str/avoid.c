@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 11:49:58 by mbecker           #+#    #+#             */
-/*   Updated: 2024/08/29 13:13:01 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/08/30 13:02:40 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
  */
 char	*avoid_space(char *str, int include_nl)
 {
+	if (!str)
+		return (NULL);
 	if (include_nl)
 	{
 		while (*str == ' '

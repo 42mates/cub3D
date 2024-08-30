@@ -15,7 +15,7 @@ test_ok()
 {
 	for file in maps/ok*; do
 		echo -e $LGREEN"Testing "$GREEN$file$NC
-		./cub3d $file
+		valgrind ./cub3d $file
 		echo ""
 		echo -en $LBLUE"Press any key to continue, or q to quit: "$NC
 		read -a input

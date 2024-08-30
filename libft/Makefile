@@ -6,7 +6,7 @@
 #    By: mbecker <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/09 15:00:14 by mbecker           #+#    #+#              #
-#    Updated: 2024/08/29 11:52:13 by mbecker          ###   ########.fr        #
+#    Updated: 2024/08/30 14:14:42 by mbecker          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,6 +54,7 @@ STR =	str/avoid.c \
 		str/ft_to.c \
 		str/ft_wordcount.c
 TAB =	tab/ft_tabdup.c \
+		tab/ft_tabfind.c \
 		tab/ft_tabjoin.c
 
 SRC	=	$(FREE) $(GET) $(LST) $(MEM) $(OTHER) $(PRINT) $(STR) $(TAB)
