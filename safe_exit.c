@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 17:06:28 by mbecker           #+#    #+#             */
-/*   Updated: 2024/08/30 16:33:05 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/02 17:17:40 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,5 @@ void	safe_exit(t_data *data)
 	i = 0;
 	while (i < 4)
 		free(data->textures[i++]);
+	//free(data->map);
 }

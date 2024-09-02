@@ -49,6 +49,7 @@ echo -e 2- "Test invalid maps"
 echo -e 3- "Test both"
 read -p "Please enter the option you would like to test (1-3): " option
 echo -e $NC
+make re
 if [ "$option" == "1" ]; then
 	test_ok
 elif [ "$option" == "2" ]; then

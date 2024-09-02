@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/15 15:48:31 by mbecker           #+#    #+#             */
-/*   Updated: 2024/08/29 13:39:34 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/02 17:46:13 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,7 +69,7 @@ char		*ft_strjoin(char *s1, char *s2, int free_s1, int free_s2);
 
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 
-int			ft_strset(char *s, char *set);
+char		*ft_strset(char *s, char *set);
 
 char		*ft_strstr(const char *haystack, const char *needle);
 char		*ft_strnstr(const char *haystack, const char *needle, size_t n);

@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:15:39 by mbecker           #+#    #+#             */
-/*   Updated: 2024/08/30 17:05:18 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/02 17:22:02 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,6 @@ int	main(int ac, char **av)
 
 	if (parsing(ac, av, &data))
 		return (safe_exit(&data), 1);
+	safe_exit(&data);
 	return (0);
 }

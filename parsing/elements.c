@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:28:04 by mbecker           #+#    #+#             */
-/*   Updated: 2024/08/30 17:24:06 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/02 17:37:29 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,14 +103,14 @@ int	check_color(char *elem_name, char *color)
  * @param data The data structure to update.
  * @return 0 if the element is valid and updated successfully, 1 otherwise.
  */
-int	check_element(char **val, t_data *data)
+int	check_element(char **val, t_data *data, char **tofind)
 {
-	static char	*elem[] = {"NO", "SO", "WE", "EA", "F", "C", NULL};
-	static int	i = 0;
+	int			i;
 
 	if (ft_tablen(val) != 2)
 		return (error(val[0], "invalid line format"));
-	if (!ft_strcmp(val[0], elem[i]))
+	i = ft_tabfind(val[0], tofind);
+	if (i >= 0)
 	{
 		if (i < 4 && !check_path(val[0], val[1]))
 			data->textures[i] = ft_strdup(val[1]);
@@ -118,12 +118,12 @@ int	check_element(char **val, t_data *data)
 			data->colors[i % 4] = rgb_to_int(val[1]);
 		else
 			return (1);
+		tofind[i][0] = 0;
 		i++;
 		return (0);
 	}
-	if (ft_tabfind(val[0], elem) >= 0)
-		return (error(val[0], "element in wrong order or already defined"));
-	error(val[0], "unknown element");
+	else
+		return (error(val[0], "element unknown or already defined"));
 	return (1);
 }
 
@@ -135,7 +135,7 @@ int	check_element(char **val, t_data *data)
  * @return the index of the first non-empty line if the map is found, -1 
  * otherwise.
  */
-int	parse_elements(char **map, t_data *data)
+int	parse_elements(t_data *data, char **map, char **tofind)
 {
 	char		**val;
 	int			i;
@@ -147,10 +147,12 @@ int	parse_elements(char **map, t_data *data)
 	{
 		if (!*avoid_space(map[i], TRUE))
 			continue ;
-		if (*avoid_space(map[i], TRUE) == '1')
+		if (*avoid_space(map[i], TRUE) == '1' && values_stored == 6)
 			return (i);
+		else if (*avoid_space(map[i], TRUE) == '1' && values_stored != 6)
+			return (error("missing map element", NULL), -1);
 		val = ft_split_charset(map[i], SPACES_NL);
-		if (check_element(val, data))
+		if (check_element(val, data, tofind))
 		{
 			freetab(val, TRUE);
 			return (-1);
@@ -158,7 +160,5 @@ int	parse_elements(char **map, t_data *data)
 		freetab(val, TRUE);
 		values_stored++;
 	}
-	if (values_stored != 6)
-		return (error("missing map element", NULL), -1);
 	return (error("no map found", NULL), -1);
 }

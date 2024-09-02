@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 16:40:37 by mbecker           #+#    #+#             */
-/*   Updated: 2024/02/15 17:14:01 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/02 18:02:13 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,24 +18,21 @@
  *
  * @param s The string to search in.
  * @param set The set of characters to search for.
- * @return The ASCII value of the first character found in the set,
- *  or 0 if no match is found.
+ * @return The adress of the first char of `set` found in s, or NULL otherwise.
  */
-int	ft_strset(char *s, char *set)
+char	*ft_strset(char *s, char *set)
 {
 	int	i;
-	int	j;
 
-	i = 0;
-	while (s[i])
+	while (*s)
 	{
-		j = 0;
-		while (set[j])
+		i = 0;
+		while (set[i])
 		{
-			if (s[i] == set[j++])
-				return (set[j - 1]);
+			if (*s == set[i++])
+				return (s);
 		}
-		i++;
+		s++;
 	}
-	return (0);
+	return (NULL);
 }
