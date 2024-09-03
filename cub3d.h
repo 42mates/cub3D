@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:16:39 by mbecker           #+#    #+#             */
-/*   Updated: 2024/08/30 12:01:44 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/03 16:34:15 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,5 @@
 # include <X11/keysym.h>
 
 int		parsing(int ac, char **av, t_data *data);
-
-void	safe_exit(t_data *data);
 
 #endif

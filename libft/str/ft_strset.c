@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/30 16:40:37 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/02 18:02:13 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/03 14:29:24 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ char	*ft_strset(char *s, char *set)
 {
 	int	i;
 
+	if (!s)
+		return (NULL);
 	while (*s)
 	{
 		i = 0;

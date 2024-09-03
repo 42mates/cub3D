@@ -13,9 +13,9 @@ NC="\033[0m"
 
 test_ok()
 {
-	for file in maps/ok*; do
+	for file in maps/tests/ok*; do
 		echo -e $LGREEN"Testing "$GREEN$file$NC
-		valgrind ./cub3d $file
+		./cub3d $file
 		echo ""
 		echo -en $LBLUE"Press any key to continue, or q to quit: "$NC
 		read -a input
@@ -29,9 +29,9 @@ test_ok()
 
 test_invalid()
 {
-	for file in maps/invalid*; do
+	for file in maps/tests/invalid*; do
 		echo -e $LYELLOW"Testing "$YELLOW$file$NC
-		valgrind ./cub3d $file
+		./cub3d $file
 		echo ""
 		echo -en $LBLUE"Press any key to continue, or q to quit: "$NC
 		read -a input
