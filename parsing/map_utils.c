@@ -6,14 +6,14 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 16:38:37 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/03 16:41:23 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/03 16:56:24 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../cub3d.h"
 #include "parsing.h"
 
-int	has_multiple_players(char to_check)
+int	has_multiple_players(char to_check, char *player_dir)
 {
 	static char	player[4] = "NSWE";
 
@@ -21,6 +21,7 @@ int	has_multiple_players(char to_check)
 		return (0);
 	if (!player[0])
 		return (error("invalid map", "multiple players"));
+	*player_dir = to_check;
 	player[0] = 0;
 	return (0);
 }

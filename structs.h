@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:20:15 by mbecker           #+#    #+#             */
-/*   Updated: 2024/08/30 17:07:53 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/03 16:56:42 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_data
 	char		**map;
 	char		*textures[4];
 	int			colors[2];
+	char		player_dir;
 }				t_data;
 
 #endif
