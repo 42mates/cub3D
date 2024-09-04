@@ -6,7 +6,7 @@
 #    By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/28 15:03:26 by mbecker           #+#    #+#              #
-#    Updated: 2024/08/29 13:37:08 by akurochk         ###   ########.fr        #
+#    Updated: 2024/09/04 16:47:23 by akurochk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,11 +17,13 @@ CFLAGS = -Wall -Wextra -Werror -g
 
 SRC =	main.c \
 		parsing/parsing.c \
-		main_loop/main_loop.c
+		parsing/elements.c \
+		parsing/map.c \
+		parsing/map_utils.c \
 
 all: $(NAME)
 
-$(NAME): libft
+$(NAME): mlx libft
 	@if [ ! -f $(NAME) ]; \
 		then $(CC) $(CFLAGS) -o $(NAME) $(SRC) -Llibft -lft;\
 		echo "$(LGREEN)./$(GREEN)$(NAME)$(LGREEN) ready.$(NC)";\
@@ -44,11 +46,11 @@ libft:
 
 mlx:
 	@if [ ! -d minilibx-linux ]; \
-		then echo "$(YELLOW)Downloading minilibx..."; \
+		then echo "$(LYELLOW)Downloading $(YELLOW)minilibx$(LYELLOW)...$(NC)"; \
 		git clone https://github.com/42Paris/minilibx-linux.git >/dev/null 2>&1; \
 	fi
 	@if [ ! -f minilibx-linux/libmlx_Linux.a ];\
-		then echo "$(YELLOW)Compiling minilibx..."; \
+		then echo "$(LYELLOW)Compiling $(YELLOW)minilibx$(LYELLOW)...$(NC)"; \
 		make -C ./minilibx-linux all >/dev/null 2>&1; \
 	fi
 

@@ -6,7 +6,7 @@
 #    By: mbecker <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/09 15:00:14 by mbecker           #+#    #+#              #
-#    Updated: 2024/08/28 14:58:08 by mbecker          ###   ########.fr        #
+#    Updated: 2024/08/30 14:14:42 by mbecker          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,8 @@ PRINT =	print/ft_printf_fd2.c \
 		print/ft_printf.c \
 		print/ft_put.c \
 		print/printtab.c
-STR =	str/ft_atoi.c \
+STR =	str/avoid.c \
+		str/ft_atoi.c \
 		str/ft_base.c \
 		str/ft_is.c \
 		str/ft_is2.c \
@@ -53,6 +54,7 @@ STR =	str/ft_atoi.c \
 		str/ft_to.c \
 		str/ft_wordcount.c
 TAB =	tab/ft_tabdup.c \
+		tab/ft_tabfind.c \
 		tab/ft_tabjoin.c
 
 SRC	=	$(FREE) $(GET) $(LST) $(MEM) $(OTHER) $(PRINT) $(STR) $(TAB)

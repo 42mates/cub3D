@@ -6,7 +6,7 @@
 /*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:20:15 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/03 16:14:56 by akurochk         ###   ########.fr       */
+/*   Updated: 2024/09/04 16:48:11 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,13 @@
 
 # include "cub3d.h"
 
-typedef struct s_textures
-{
-	int	no; //north texture file descriptor
-	int	so; //south texture file descriptor
-	int	we; //west texture file descriptor
-	int	ea; //east texture file descriptor
-	int	f; //floor rgb value
-	int	c; //ceiling rgb value
-}		t_textures;
-
 typedef struct s_data
 {
+	t_textures	txtr;
+	char		*textures[4];
+	int			colors[2];
+	char		player_dir;
+	
 	int			mapfd;
 	char		**map;
 	int			map_l;	// length of the map
@@ -46,7 +41,6 @@ typedef struct s_data
 	
 	void		*mlx;
 	
-	t_textures	txtr;
 }				t_data;
 
 typedef struct s_ray

@@ -1,9 +1,10 @@
 NO ./textures/xterm-linux.xpm
+NOT VALID INPUT
 SO ./textures/xterm-linux.xpm
 WE ./textures/xterm-linux.xpm
 EA ./textures/xterm-linux.xpm
-F 255,0,255
-C 128,255,0
+F 220,100,0
+C 225,30,0
 
 
         1111111111111111111111111

@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/14 14:40:08 by mbecker           #+#    #+#             */
-/*   Updated: 2024/02/23 16:10:41 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/08/29 11:54:52 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	**ft_tabjoin(char **tab, char *str, int free_tab, int free_str)
 
 	if (tab == NULL || str == NULL)
 		return (tab);
-	tablen = ft_tablen((const char **)tab);
+	tablen = ft_tablen(tab);
 	res = (char **)malloc(sizeof(char *) * (tablen + 2));
 	if (!res)
 		return (NULL);

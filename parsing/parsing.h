@@ -1,22 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   macros.h                                           :+:      :+:    :+:   */
+/*   parsing.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/02/20 17:22:17 by mbecker           #+#    #+#             */
-/*   Updated: 2024/08/29 11:02:47 by mbecker          ###   ########.fr       */
+/*   Created: 2024/08/29 15:56:16 by mbecker           #+#    #+#             */
+/*   Updated: 2024/09/03 16:56:16 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MACROS_H
-# define MACROS_H
+#ifndef PARSING_H
+# define PARSING_H
 
-# define TRUE 1
-# define FALSE 0
+# include "../cub3d.h"
 
-# define BUFFER_SIZE 4096
-# define FD_MAX 512
+int		error(char *msg1, char *msg2);
+
+int		parse_elements(t_data *data, char **map, char **tofind);
+
+int		parse_map(t_data *data, char **map);
+
+int		has_multiple_players(char to_check, char *player_dir);
+int		is_valid_ground(char **map, int i, int j);
 
 #endif

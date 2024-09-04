@@ -1,17 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   defines.h                                          :+:      :+:    :+:   */
+/*   define.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 13:33:49 by akurochk          #+#    #+#             */
-/*   Updated: 2024/09/02 14:17:58 by akurochk         ###   ########.fr       */
+/*   Created: 2024/08/29 10:40:57 by mbecker           #+#    #+#             */
+/*   Updated: 2024/09/04 16:50:37 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DEFINES_H
-# define DEFINES_H
+#ifndef DEFINE_H
+# define DEFINE_H
+
+# define PROGRAM_NAME "cub3d"
+
+# define SPACES " \t\r\f\v"
+# define SPACES_NL " \t\r\f\v\n"
+
+# define NO 0
+# define SO 1
+# define WE 2
+# define EA 3
+# define F 0
+# define C 1
 
 # define SIZE_X 	640
 # define SIZE_Y 	480
@@ -44,4 +56,5 @@
 // // # define KEY_LEFT	123
 // # define KEY_RIGHT	124
 // # define KEY_ESC	53
+
 #endif
