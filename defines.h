@@ -6,7 +6,7 @@
 /*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 13:33:49 by akurochk          #+#    #+#             */
-/*   Updated: 2024/08/29 17:27:53 by akurochk         ###   ########.fr       */
+/*   Updated: 2024/09/02 14:17:58 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 # define SIZE_X 	640
 # define SIZE_Y 	480
+# define FOV		1.0471976f // (M_PIf / 3) field_of_view 60 degrees in radians ( is used for console games )
 
 # define SPEED		0.2f // 0.2f : walk 20% of block size each keypress
 # define SPPED_R	0.2f // 0.2f : view direction roration 0.2*PI each keypress

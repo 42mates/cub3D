@@ -6,7 +6,7 @@
 /*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:05:39 by akurochk          #+#    #+#             */
-/*   Updated: 2024/08/29 16:45:20 by akurochk         ###   ########.fr       */
+/*   Updated: 2024/09/03 16:20:26 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 static void get_view(t_data *data, char c)
 {
 	if (c == 'N')
-		data->dir_v = 0.5f * M_PI;
+		data->dir_v = -0.5f * M_PI;
 	else if (c == 'E')
 		data->dir_v = 0.0f * M_PI;
 	else if (c == 'W')
 		data->dir_v = 1.0f * M_PI;
 	else if (c == 'S')
-		data->dir_v = -0.5f * M_PI;
+		data->dir_v = 0.5f * M_PI;
 }
 
-void get_position(t_data *data) 
+void get_position(t_data *data)
 {
 	int i;
 	int	j;

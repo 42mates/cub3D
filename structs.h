@@ -6,7 +6,7 @@
 /*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:20:15 by mbecker           #+#    #+#             */
-/*   Updated: 2024/08/29 17:25:20 by akurochk         ###   ########.fr       */
+/*   Updated: 2024/09/03 16:14:56 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,24 @@ typedef struct s_data
 
 typedef struct s_ray
 {
-	/* data */
+	float dx;	// x distance to the wall
+	float dy;	// y distance to the wall
+
+	int x_sign;	// sign of the x direction
+	int y_sign;	// sign of the y direction
+
+	float x_hor; // for horizonal wall collision
+	float y_hor; // for horizonal wall collision
+	
+	float x_ver; // for vertical wall collision
+	float y_ver; // for vertical wall collision
+
+	float s_hor; // horizontal step of the ray
+	float s_ver; // vertical step of the ray
+
+	float d_hor; // distance to horizontal wall or grid
+	float d_ver; // distance to vertical wall or grid
+	
 }			t_ray;	
 
 
