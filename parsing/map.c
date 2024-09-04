@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 12:45:46 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/03 16:58:33 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/04 17:56:44 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	check_top_bottom(char **map, int map_end)
 	return (0);
 }
 
-int	check_middle(char **map, int map_end, char *player_dir)
+int	check_middle(char **map, int map_end)
 {
 	int	i;
 	int	j;
@@ -72,7 +72,7 @@ int	check_middle(char **map, int map_end, char *player_dir)
 				return (error("invalid map", "forbidden character"));
 			else if (!is_valid_ground(map, i, j))
 				return (error("invalid map", "breach found"));
-			else if (has_multiple_players(map[i][j], player_dir))
+			else if (has_multiple_players(map[i][j]))
 				return (1);
 			j++;
 		}
@@ -91,7 +91,7 @@ int	parse_map(t_data *data, char **map)
 	if (map_end < 3)
 		return (error("invalid map", "too small"));
 	if (check_top_bottom(map, map_end)
-		|| check_middle(map, map_end, &data->player_dir))
+		|| check_middle(map, map_end))
 		return (1);
 	data->map = ft_tabndup(map, map_end);
 	if (!data->map)

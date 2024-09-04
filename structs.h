@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:20:15 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/04 16:48:11 by akurochk         ###   ########.fr       */
+/*   Updated: 2024/09/04 17:55:40 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 
 typedef struct s_data
 {
-	t_textures	txtr;
 	char		*textures[4];
 	int			colors[2];
 	char		player_dir;
@@ -36,6 +35,9 @@ typedef struct s_data
 	int			bpp;	// bits_per_pixel
 	int			s_l;	// size_line
 	int			en;		// endian;
+
+	//struct s_img	img; 
+	//struct s_img	img_txt[4];
 		
 	void		*win;
 	
@@ -65,5 +67,13 @@ typedef struct s_ray
 	
 }			t_ray;	
 
+typedef struct s_img
+{
+	void		*img;	// img_ptr
+	char		*d_a;	// data_addr
+	int			bpp;	// bits_per_pixel
+	int			s_l;	// size_line
+	int			en;		// endian;
+}				t_img;
 
 #endif
