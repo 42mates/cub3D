@@ -6,7 +6,7 @@
 #    By: mbecker <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/28 15:03:26 by mbecker           #+#    #+#              #
-#    Updated: 2024/09/03 16:40:56 by mbecker          ###   ########.fr        #
+#    Updated: 2024/09/05 15:30:03 by mbecker          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,18 +15,32 @@ NAME = cub3d
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g
 
-SRC =	main.c \
-		parsing/parsing.c \
+LIBS =	-Llibft -lft \
+		-Lminilibx-linux -lmlx_Linux \
+		-lX11 -lXext \
+		-lm
+
+SRC =	parsing/parsing.c \
 		parsing/elements.c \
 		parsing/map.c \
 		parsing/map_utils.c \
+		src/draw.c \
+		src/get_position.c \
+		src/handle_destroy.c \
+		src/handle_key.c \
+		src/main.c \
+		src/ray_casting.c 
 
 all: $(NAME)
 
 $(NAME): mlx libft
 	@if [ ! -f $(NAME) ]; \
-		then $(CC) $(CFLAGS) -o $(NAME) $(SRC) -Llibft -lft;\
-		echo "$(LGREEN)./$(GREEN)$(NAME)$(LGREEN) ready.$(NC)";\
+		then $(CC) $(CFLAGS) -o $(NAME) $(SRC) $(LIBS);\
+		if [ $$? -eq 0 ]; then\
+			echo "$(LGREEN)./$(GREEN)$(NAME)$(LGREEN) ready.$(NC)";\
+		else\
+			echo "$(LRED)./$(RED)$(NAME)$(LRED) failed to compile.$(NC)";\
+		fi;\
 	else\
 		echo "$(LGREEN)./$(GREEN)$(NAME)$(LGREEN) already compiled.$(NC)";\
 	fi

@@ -6,12 +6,12 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:41:56 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/03 14:10:17 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/05 15:31:25 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
-#include "parsing.h"
+#include "../includes/cub3d.h"
+#include "../includes/parsing.h"
 
 int	error(char *msg1, char *msg2)
 {
@@ -28,16 +28,16 @@ int	error(char *msg1, char *msg2)
 	return (1);
 }
 
-int	parse_file(t_data *data)
+int	parse_file(t_data *data, int mapfd)
 {
 	char	**map;
 	int		map_index;
 	char	**tofind;
 
-	map = get_file(data->mapfd);
+	map = get_file(mapfd);
 	if (!map)
 		return (error("init_data()", "error retrieving file"));
-	close(data->mapfd);
+	close(mapfd);
 	tofind = (char **)malloc(sizeof(char *) * 7);
 	tofind[0] = ft_strdup("NO");
 	tofind[1] = ft_strdup("SO");
@@ -59,6 +59,7 @@ int	parse_file(t_data *data)
 int	parsing(int ac, char **av, t_data *data)
 {
 	char	*ptr;
+	int		mapfd;
 
 	if (ac < 2)
 		return (error("too few arguments", NULL));
@@ -72,10 +73,10 @@ int	parsing(int ac, char **av, t_data *data)
 	ptr = ft_strrstr(av[1], ".cub");
 	if (!ptr || ft_strlen(ptr) != 4)
 		return (error("invalid map name", NULL));
-	data->mapfd = open(av[1], O_RDONLY);
-	if (data->mapfd == -1)
+	mapfd = open(av[1], O_RDONLY);
+	if (mapfd == -1)
 		return (error(av[1], strerror(errno)));
-	if (parse_file(data))
+	if (parse_file(data, mapfd))
 		return (1);
 	return (0);
 }

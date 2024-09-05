@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 16:36:48 by mbecker           #+#    #+#             */
-/*   Updated: 2024/02/15 17:14:00 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/05 16:01:16 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 //returns a pointer to the first occurence of c in str.
 char	*ft_strchr(const char *str, int c)
 {
+	if (!str)
+		return (NULL);
 	while (*str != '\0')
 	{
 		if (*str == (char)c)

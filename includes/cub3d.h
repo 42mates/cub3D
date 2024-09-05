@@ -1,27 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   structs.h                                          :+:      :+:    :+:   */
+/*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/28 15:20:15 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/03 16:56:42 by mbecker          ###   ########.fr       */
+/*   Created: 2024/08/28 15:16:39 by mbecker           #+#    #+#             */
+/*   Updated: 2024/09/05 11:47:39 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef STRUCTS_H
-# define STRUCTS_H
+#ifndef CUB3D_H
+# define CUB3D_H
 
-# include "cub3d.h"
+# include <fcntl.h>
+# include <unistd.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <string.h>
+# include <errno.h>
+# include <sys/time.h>
+# include <math.h>
 
-typedef struct s_data
-{
-	int			mapfd;
-	char		**map;
-	char		*textures[4];
-	int			colors[2];
-	char		player_dir;
-}				t_data;
+# include "../libft/libft.h"
+# include "define.h"
+# include "enum.h"
+# include "src.h"
+# include "structs.h"
+
+# include "../minilibx-linux/mlx.h"
+# include <X11/keysym.h>
 
 #endif

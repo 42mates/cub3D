@@ -6,12 +6,12 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:28:04 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/02 17:37:29 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/05 10:46:21 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
-#include "parsing.h"
+#include "../includes/cub3d.h"
+#include "../includes/parsing.h"
 
 int	rgb_to_int(char *rgb_str)
 {

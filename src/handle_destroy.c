@@ -1,34 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   cub3d.h                                            :+:      :+:    :+:   */
+/*   handle_destroy.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/28 15:16:39 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/03 16:34:15 by mbecker          ###   ########.fr       */
+/*   Created: 2024/09/05 11:42:38 by mbecker           #+#    #+#             */
+/*   Updated: 2024/09/05 13:38:20 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CUB3D_H
-# define CUB3D_H
+#include "../includes/cub3d.h"
+#include "../includes/src.h"
 
-# include <fcntl.h>
-# include <unistd.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <string.h>
-# include <errno.h>
-# include <sys/time.h>
-# include <math.h>
+void	free_data(t_data *data)
+{
+	freentab(data->textures, 4, FALSE);
+	freetab(data->map, TRUE);
+}
 
-# include "libft/libft.h"
-# include "structs.h"
-# include "define.h"
-
-# include "minilibx-linux/mlx.h"
-# include <X11/keysym.h>
-
-int		parsing(int ac, char **av, t_data *data);
-
-#endif
+int	handle_destroy(t_data *data)
+{
+	mlx_destroy_window(data->mlx, data->win);
+	mlx_destroy_display(data->mlx);
+	free(data->mlx);
+	free_data(data);
+	exit(0);
+	return (0);
+}
