@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:16:39 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/04 16:50:54 by akurochk         ###   ########.fr       */
+/*   Updated: 2024/09/05 11:47:39 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,14 +22,13 @@
 # include <sys/time.h>
 # include <math.h>
 
-# include "enum.h"
-# include "libft/libft.h"
-# include "structs.h"
+# include "../libft/libft.h"
 # include "define.h"
+# include "enum.h"
+# include "src.h"
+# include "structs.h"
 
-# include "minilibx-linux/mlx.h"
+# include "../minilibx-linux/mlx.h"
 # include <X11/keysym.h>
-
-int		parsing(int ac, char **av, t_data *data);
 
 #endif

@@ -1,27 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_loop.c                                        :+:      :+:    :+:   */
+/*   handle_destroy.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/08/29 13:21:17 by akurochk          #+#    #+#             */
-/*   Updated: 2024/09/04 17:40:42 by mbecker          ###   ########.fr       */
+/*   Created: 2024/09/05 11:42:38 by mbecker           #+#    #+#             */
+/*   Updated: 2024/09/05 13:38:20 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../includes/cub3d.h"
+#include "../includes/src.h"
 
-int main_loop(t_data *data)
+void	free_data(t_data *data)
 {
-	data->mlx = mlx_init();
-	data->win = mlx_new_window(data->mlx, SIZE_X, SIZE_Y, "cub3d");
+	freentab(data->textures, 4, FALSE);
+	freetab(data->map, TRUE);
+}
 
-	draw(data);				// draw the first frame
-
-	mlx_hook(data->win, ON_KEYDOWN, KeyPressMask, handle_key, data);	// change position and redraw (or ESC)
-	mlx_hook(data->win, ON_DESTROY, NoEventMask, handle_destroy, data);	// destroy, free and exit
-	mlx_loop(data->mlx);
-
+int	handle_destroy(t_data *data)
+{
+	mlx_destroy_window(data->mlx, data->win);
+	mlx_destroy_display(data->mlx);
+	free(data->mlx);
+	free_data(data);
+	exit(0);
 	return (0);
 }

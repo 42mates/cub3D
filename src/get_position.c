@@ -6,11 +6,12 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:05:39 by akurochk          #+#    #+#             */
-/*   Updated: 2024/09/04 17:30:48 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/05 15:19:15 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../includes/cub3d.h"
+#include "../includes/src.h"
 
 static void get_view(t_data *data, char c)
 {
@@ -30,7 +31,7 @@ void get_position(t_data *data)
 	int	j;
 
 	i = -1;
-	while(++i , data->map_l)		// map_l is number of lines in the map
+	while(++i , data->map_h)		// map_h is number of lines in the map
 	{
 		j = -1;
 		while (data->map[i][++j])	// hope lines ended with '\0'

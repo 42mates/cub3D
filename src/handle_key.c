@@ -3,17 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   handle_key.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:27:45 by akurochk          #+#    #+#             */
-/*   Updated: 2024/08/29 17:13:00 by akurochk         ###   ########.fr       */
+/*   Updated: 2024/09/05 13:18:59 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../includes/cub3d.h"
+#include "../includes/src.h"
 
 static void	move(t_data *data, int dir)
 {
+
 	float	dx;
 	float	dy;
 	float	a;		// angle
@@ -35,16 +37,23 @@ static void	move(t_data *data, int dir)
 	// then update player's position
 	data->pos_x += dx;
 	data->pos_y -= dy;
+
+	(void)d;	// cc "unused variable" silencer
 }
 
 static void	rotate(t_data *data, int dir)
 {
-	if (dir == 1 || dir == -1)
-		data->dir_v += dir * SPEED_R * M_PI;
+	//if (dir == 1 || dir == -1)
+	//	data->dir_v += dir * SPEED_R * M_PI;
+
+	(void)data;	// cc "unused variable" silencer
+	(void)dir;	// cc "unused variable" silencer
 }
 
 int	handle_key(int key, t_data *data)
 {
+	printf("key = %d\n", key);
+
 	if (key == KEY_ESC)
 		handle_destroy(data);
 	else if (key == KEY_W)

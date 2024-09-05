@@ -6,12 +6,12 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 16:38:37 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/04 17:56:59 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/05 16:25:37 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../cub3d.h"
-#include "parsing.h"
+#include "../includes/cub3d.h"
+#include "../includes/parsing.h"
 
 int	has_multiple_players(char to_check)
 {
@@ -36,4 +36,18 @@ int	is_valid_ground(char **map, int i, int j)
 		|| !ft_is(map[i + 1][j], "01NSWE")))
 		return (0);
 	return (1);
+}
+
+void	remove_nl(char **map)
+{
+	char	*tmp;
+	int		i;
+
+	i = 0;
+	tmp = ft_strchr(map[i++], '\n');
+	while (tmp)
+	{
+		*tmp = 0;
+		tmp = ft_strchr(map[i++], '\n');
+	}
 }

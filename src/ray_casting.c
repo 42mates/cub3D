@@ -3,14 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ray_casting.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 17:15:04 by akurochk          #+#    #+#             */
-/*   Updated: 2024/09/03 17:36:25 by akurochk         ###   ########.fr       */
+/*   Updated: 2024/09/05 12:55:27 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#include "../includes/cub3d.h"
+#include "../includes/src.h"
 
 int		get_sign(float x)
 {
@@ -103,7 +104,6 @@ void	ray_casting(t_data *data)
 	l_dir = data->dir_v - FOV / 2;	// to start angle from the left line in the window
 	step = FOV / (SIZE_X - 1);	// to get the step of the angle between the lines
 
-	(void)data;
 	while (++n_line < SIZE_X) // to draw lines in the window
 	{
 		draw_line(n_line, ray_scane(l_dir, data), data);
