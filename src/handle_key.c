@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_key.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:27:45 by akurochk          #+#    #+#             */
-/*   Updated: 2024/09/06 14:06:38 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/06 17:27:52 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static void	move(t_data *data, int dir)
 
 	a = data->dir_v + dir * M_PI_2;
 	dx = cos(a) * SPEED;
-	dy = sin(a) * SPEED;
+	dy = -sin(a) * SPEED;
 	
 	// // check wall collision
 	// d = ray_scane(); // get the distance to the wall x-direction
@@ -36,7 +36,7 @@ static void	move(t_data *data, int dir)
 	
 	// then update player's position
 	data->pos_x += dx;
-	data->pos_y -= dy;
+	data->pos_y += dy;
 
 	(void)d;	// cc "unused variable" silencer
 }
@@ -67,6 +67,7 @@ int	handle_key(int key, t_data *data)
 		rotate(data, 1);
 	else 					// nothing if another key. here we can add more reactions
 		return (0);
+	printf("pos_x = %f, pos_y = %f, dir_v = %f\n", data->pos_x, data->pos_y, data->dir_v);
 	draw(data);				// draw the new frame in case of handled key
 	return (0);
 }

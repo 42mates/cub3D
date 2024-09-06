@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 16:07:19 by akurochk          #+#    #+#             */
-/*   Updated: 2024/09/06 14:27:39 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/06 17:11:49 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ void	draw(t_data *data)
 		error("draw()", "couldn't create image");
 	data->img.d_a = mlx_get_data_addr(data->img.img_ptr, &data->img.bpp, &data->img.s_l, &data->img.en);
 	draw_c_and_f(data);
-	//ray_casting(data);											// to draw the walls
+	ray_casting(data);											// to draw the walls
+	printf("put_image\n");
 	mlx_put_image_to_window(data->mlx, data->win, data->img.img_ptr, 0, 0); // to show the image in the window
 	// put_minimap_to_window(data);									// looks like it should be here if minimap is on
 	mlx_destroy_image(data->mlx, data->img.img_ptr);						// no need it more	
@@ -43,11 +44,11 @@ void	draw(t_data *data)
 
 void draw_line(int x, float distance, t_data *data)
 {
-	int		l_len;			// length of vertical line (part of wall)
 	int		*src;			// pointer to the first source image pixel
 	int		*dst;			// pointer to the destination image pixel
-	float	step;			// step (vertical) to the next pixel in the source image 
+	int		l_len;			// length of vertical line (part of wall)
 	float	l_pos;			// position in the line, helps to get correct color
+	float	step;			// step (vertical) to the next pixel in the source image 
 	
 
 	l_len = (float)SIZE_Y / distance; // length in scale in pixels;
@@ -61,14 +62,14 @@ void draw_line(int x, float distance, t_data *data)
 	}
 	
 	src = (int *) data->img_txt[data->id_txt].d_a; // pointer to the first pixel of the source image
-	src += (int)((float)data->w_txt * data->img_txt[data->id_txt].size_y); // go to first visaiable pixel
+	src += (int)((float)data->w_txt * data->img_txt[data->id_txt].size_x); // go to first visaiable pixel
 	
 	dst = (int *) data->img.d_a; // pointer to the first pixel of the destination image
 	dst += x + (SIZE_Y - l_len) / 2 * SIZE_X; // go to the first pixel of the line
 
 	while (l_len-- > 0) 
 	{
-		*dst = *(src + ((int)l_pos) * data->img_txt[data->id_txt].size_y); // set the pixel color
+		*dst = *(src + ((int)l_pos) * data->img_txt[data->id_txt].size_x); // set the pixel color
 		dst += SIZE_X; // go to the next pixel (down)
 		l_pos += step; // go to the next pixel in src image;
 	}

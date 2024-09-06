@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   define.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 10:40:57 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/06 14:29:47 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/06 17:09:40 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@
 # define F 0
 # define C 1
 
-# define SIZE_X 	1080
+# define SIZE_X 	1280
 # define SIZE_Y 	720
 # define FOV		1.0471976f // (M_PIf / 3) field_of_view 60 degrees in radians ( is used for console games )
 
-# define SPEED		0.2f // 0.2f : walk 20% of block size each keypress
-# define SPEED_R	0.2f // 0.2f : view direction roration 0.2*PI each keypress
+# define SPEED		0.1f // 0.2f : walk 20% of block size each keypress
+# define SPEED_R	0.05f // 0.2f : view direction roration 0.2*PI each keypress
 
 
 // hope there is a way how to use correct KEY-set during compilation
