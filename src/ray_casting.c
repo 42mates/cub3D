@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ray_casting.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 17:15:04 by akurochk          #+#    #+#             */
-/*   Updated: 2024/09/06 14:04:39 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/06 17:23:14 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 int		get_sign(float x)
 {
-	if (x < 0)
+	if (x < 0.0f)
 		return (-1);
 	if (x == 0)
 		return (0);
@@ -30,13 +30,13 @@ void	init_ray(t_ray *ray, float a, t_data *data)
 	ray->x_sign = get_sign(ray->dx);
 	ray->y_sign = get_sign(ray->dy);
 
-	ray->x_ver = data->pos_x;
-	ray->y_hor = data->pos_y;
+	ray->x_ver = (int) data->pos_x;
+	ray->y_hor = (int) data->pos_y;
 
 	if (ray->x_sign > 0)
-		ray->x_ver++;
+		ray->x_ver += 1.0f;
 	if (ray->y_sign > 0)
-		ray->y_hor++;
+		ray->y_hor += 1.0f;
 }
 
 // to get the distance to the walls we need angle and data
@@ -51,18 +51,34 @@ float	ray_scan(float a, t_data *data) // a - angle of scan direction in radian
 	while (1)	// breakpoint - a wall in a ray direction
 	{
 		// next vertical intesection
-		ray.y_ver = data->pos_y + ray.dy / ray.dx * (ray.x_ver - data->pos_x);
-		ray.d_ver = sqrt(pow(data->pos_x - ray.x_ver, 2.0) + pow(data->pos_y - ray.y_ver, 2.0));
-		ray.s_ver = ray.y_ver - (int) ray.y_ver;
-		if (ray.x_sign > 0)
-			ray.s_ver = 1 - ray.s_ver;
+		if (ray.x_sign == 0)
+		{
+			ray.d_hor = INFINITY;
+		}
+		else
+		{
+			ray.y_ver = data->pos_y + ray.dy / ray.dx * (ray.x_ver - data->pos_x);
+			ray.d_ver = sqrt(pow(data->pos_x - ray.x_ver, 2.0) + pow(data->pos_y - ray.y_ver, 2.0));
+			ray.s_ver = ray.y_ver - (int) ray.y_ver;
+			if (ray.x_sign > 0)
+				ray.s_ver = 1 - ray.s_ver;
+		}
 
 		// next horizontal intersection
-		ray.x_hor = data->pos_x + ray.dx / ray.dy * (ray.y_hor - data->pos_y);
-		ray.d_hor = sqrt(pow(data->pos_x - ray.x_hor, 2.0) + pow(data->pos_y - ray.y_hor, 2.0));
-		ray.s_hor = ray.x_hor - (int) ray.x_hor;
-		if (ray.y_sign > 0)
-			ray.s_hor = 1 - ray.s_hor;
+		if (ray.y_sign == 0)
+		{
+			ray.d_ver = INFINITY;
+		}
+		else
+		{
+			ray.x_hor = data->pos_x + ray.dx / ray.dy * (ray.y_hor - data->pos_y);
+			ray.d_hor = sqrt(pow(data->pos_x - ray.x_hor, 2.0) + pow(data->pos_y - ray.y_hor, 2.0));
+			ray.s_hor = ray.x_hor - (int) ray.x_hor;
+			if (ray.y_sign < 0)
+				ray.s_hor = 1 - ray.s_hor;
+		}
+
+		//----------------- to check the shortest distance -----------------
 
 		if (ray.d_ver < ray.d_hor) // vertical grid collision
 		{
@@ -93,7 +109,7 @@ float	ray_scan(float a, t_data *data) // a - angle of scan direction in radian
 			}
 			else
 			{
-				ray.y_ver += ray.y_sign; // next horizontal step
+				ray.y_hor += ray.y_sign; // next horizontal step
 			}
 		}
 	}
@@ -112,7 +128,7 @@ void	ray_casting(t_data *data)
 
 	while (++n_line < SIZE_X) // to draw lines in the window
 	{
-		draw_line(n_line, ray_scan(l_dir, data), data);
+		draw_line(n_line, ray_scan(l_dir, data) * cos(data->dir_v - l_dir), data);
 		l_dir += step;	// change direction to the next line
 	}
 }
