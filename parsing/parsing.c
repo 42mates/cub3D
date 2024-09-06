@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:41:56 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/05 15:31:25 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/06 15:49:58 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,7 @@ int	parsing(int ac, char **av, t_data *data)
 	data->textures[2] = NULL;
 	data->textures[3] = NULL;
 	data->map = NULL;
+
 	ptr = ft_strrstr(av[1], ".cub");
 	if (!ptr || ft_strlen(ptr) != 4)
 		return (error("invalid map name", NULL));
