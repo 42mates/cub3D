@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 11:03:57 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/05 13:24:11 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/06 14:13:56 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,13 +30,11 @@ int		handle_destroy(t_data *data);
 /*********** HANDLE_KEY.C    ***********/
 int		handle_key(int key, t_data *data);
 
-/*********** MAIN_LOOP.C    ***********/ 
-int		main_loop(t_data *data);
-
 /*********** RAY_CASTING.C  ***********/ 
 void	ray_casting(t_data *data);
 
 /*********** PARSING.C      ***********/
+int		error(char *str, char *str2);
 int		parsing(int ac, char **av, t_data *data);
 
 #endif

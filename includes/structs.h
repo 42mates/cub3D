@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:20:15 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/05 15:18:57 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/06 13:48:05 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,18 +39,14 @@ typedef struct s_ray
 
 typedef struct s_img
 {
-	void		*img;	// img_ptr
+	void		*img_ptr;	// img_ptr
 	char		*d_a;	// data_addr
 	int			bpp;	// bits_per_pixel
 	int			s_l;	// size_line
 	int			en;		// endian;
+	int 		size_x;	// horizontal size in pixels
+	int			size_y;	// vertical size in pixels
 }				t_img;
-
-typedef struct s_mlx
-{
-	void		*cnx;
-	void		*wdw;
-}				t_mlx;
 
 typedef struct s_data
 {
@@ -64,20 +60,13 @@ typedef struct s_data
 	float		pos_y;	// y position of the player
 	float		dir_v;	// view direction of the player
 
-	// we can add structure to collect image data
-	void		*img;	// img_ptr
-	char		*d_a;	// data_addr
-	int			bpp;	// bits_per_pixel
-	int			s_l;	// size_line
-	int			en;		// endian;
+	t_img		img;
+	t_img		img_txt[4];
+	int			id_txt;	// id of the texture in array
+	float		w_txt;	// visual width of the texture	
 
-	//struct s_img	img; 
-	//struct s_img	img_txt[4];
-		
-	// t_mlx contains the following two lines:
 	void		*win;
 	void		*mlx;
-
 }				t_data;
 
 

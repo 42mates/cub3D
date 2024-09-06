@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 11:42:38 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/05 13:38:20 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/06 14:15:00 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 void	free_data(t_data *data)
 {
+	//free images if existing
 	freentab(data->textures, 4, FALSE);
 	freetab(data->map, TRUE);
 }

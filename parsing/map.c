@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 12:45:46 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/05 16:24:45 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/06 14:16:25 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ int	check_top_bottom(t_data *data, char **map, int map_end)
 		return (error("invalid map", "please check top border"));
 	last = map_end - 1;
 	data->map_w = i - 1;
-	printf("map_w: %d\n", data->map_w);
 	i = 0;
 	while (ft_is(map[last][i], " 1"))
 		i++;

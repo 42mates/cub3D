@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:27:45 by akurochk          #+#    #+#             */
-/*   Updated: 2024/09/05 13:18:59 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/06 14:06:38 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,8 @@ static void	move(t_data *data, int dir)
 
 static void	rotate(t_data *data, int dir)
 {
-	//if (dir == 1 || dir == -1)
-	//	data->dir_v += dir * SPEED_R * M_PI;
-
-	(void)data;	// cc "unused variable" silencer
-	(void)dir;	// cc "unused variable" silencer
+	if (dir == 1 || dir == -1)
+		data->dir_v += dir * SPEED_R * M_PI;
 }
 
 int	handle_key(int key, t_data *data)

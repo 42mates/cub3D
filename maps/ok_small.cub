@@ -2,8 +2,8 @@ NO ./textures/xterm-linux.xpm
 SO ./textures/xterm-linux.xpm
 WE ./textures/xterm-linux.xpm
 EA ./textures/xterm-linux.xpm
-F 255,0,255
-C 128,255,0
+C 135,206,235
+F 29,93,54
 
 
 111

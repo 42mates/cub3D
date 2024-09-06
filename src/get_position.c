@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:05:39 by akurochk          #+#    #+#             */
-/*   Updated: 2024/09/05 15:19:15 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/06 13:54:01 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,13 @@
 static void get_view(t_data *data, char c)
 {
 	if (c == 'N')
-		data->dir_v = -0.5f * M_PI;
+		data->dir_v = 0.5f * M_PI;
 	else if (c == 'E')
 		data->dir_v = 0.0f * M_PI;
 	else if (c == 'W')
 		data->dir_v = 1.0f * M_PI;
 	else if (c == 'S')
-		data->dir_v = 0.5f * M_PI;
+		data->dir_v = -0.5f * M_PI;
 }
 
 void get_position(t_data *data)

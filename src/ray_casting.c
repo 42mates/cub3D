@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 17:15:04 by akurochk          #+#    #+#             */
-/*   Updated: 2024/09/05 12:55:27 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/06 14:04:39 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ void	init_ray(t_ray *ray, float a, t_data *data)
 }
 
 // to get the distance to the walls we need angle and data
-float	ray_scane(float a, t_data *data) // a - angle of scan direction in radian
+float	ray_scan(float a, t_data *data) // a - angle of scan direction in radian
 {
 	int		i;
 	int 	j;
@@ -70,6 +70,9 @@ float	ray_scane(float a, t_data *data) // a - angle of scan direction in radian
 			j = (int) ray.x_ver + (ray.x_sign - 1) / 2;
 			if (data->map[i][j] == '1') // is wall collision
 			{
+				// also we have to collect info about texture #NEWS
+				data->id_txt = ray.x_sign + 1; // check if it will be 0 or 2 here
+				data->w_txt = ray.s_ver;
 				return (ray.d_ver);
 			}
 			else
@@ -83,6 +86,9 @@ float	ray_scane(float a, t_data *data) // a - angle of scan direction in radian
 			j = (int) ray.x_hor;
 			if (data->map[i][j] == '1') // is wall collision
 			{
+				// also we have to collect info about texture #NEWS
+				data->id_txt = ray.y_sign + 2; // it will be 1 or 3 here
+				data->w_txt = ray.s_hor;
 				return (ray.d_hor);
 			}
 			else
@@ -106,7 +112,7 @@ void	ray_casting(t_data *data)
 
 	while (++n_line < SIZE_X) // to draw lines in the window
 	{
-		draw_line(n_line, ray_scane(l_dir, data), data);
+		draw_line(n_line, ray_scan(l_dir, data), data);
 		l_dir += step;	// change direction to the next line
 	}
 }
