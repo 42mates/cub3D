@@ -6,12 +6,12 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:41:56 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/05 15:31:25 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/09 11:34:34 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
-#include "../includes/parsing.h"
+#include "../../includes/cub3d.h"
+#include "../../includes/parsing.h"
 
 int	error(char *msg1, char *msg2)
 {

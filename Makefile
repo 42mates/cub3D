@@ -6,7 +6,7 @@
 #    By: mbecker <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/28 15:03:26 by mbecker           #+#    #+#              #
-#    Updated: 2024/09/05 15:30:03 by mbecker          ###   ########.fr        #
+#    Updated: 2024/09/09 11:34:54 by mbecker          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,10 +20,10 @@ LIBS =	-Llibft -lft \
 		-lX11 -lXext \
 		-lm
 
-SRC =	parsing/parsing.c \
-		parsing/elements.c \
-		parsing/map.c \
-		parsing/map_utils.c \
+SRC =	src/parsing/parsing.c \
+		src/parsing/elements.c \
+		src/parsing/map.c \
+		src/parsing/map_utils.c \
 		src/draw.c \
 		src/get_position.c \
 		src/handle_destroy.c \

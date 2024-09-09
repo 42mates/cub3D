@@ -6,12 +6,12 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/03 16:38:37 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/05 16:25:37 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/09 11:34:34 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
-#include "../includes/parsing.h"
+#include "../../includes/cub3d.h"
+#include "../../includes/parsing.h"
 
 int	has_multiple_players(char to_check)
 {

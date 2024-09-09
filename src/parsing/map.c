@@ -6,12 +6,12 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 12:45:46 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/06 14:16:25 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/09 11:34:34 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
-#include "../includes/parsing.h"
+#include "../../includes/cub3d.h"
+#include "../../includes/parsing.h"
 
 int	check_empty(char **map, int *map_end)
 {
