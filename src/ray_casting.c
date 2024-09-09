@@ -6,7 +6,7 @@
 /*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 17:15:04 by akurochk          #+#    #+#             */
-/*   Updated: 2024/09/09 15:56:01 by akurochk         ###   ########.fr       */
+/*   Updated: 2024/09/09 17:10:55 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ float	ray_scan(float a, t_data *data) // a - angle of scan direction in radian
 			{
 				// also we have to collect info about texture #NEWS
 				data->id_txt = ray.x_sign + 1; // check if it will be 0 or 2 here
-				data->w_txt = ray.s_ver;
+				data->w_txt = 1 - ray.s_ver;
 				return (ray.d_ver);
 			}
 			else
@@ -104,7 +104,7 @@ float	ray_scan(float a, t_data *data) // a - angle of scan direction in radian
 			{
 				// also we have to collect info about texture #NEWS
 				data->id_txt = ray.y_sign + 2; // it will be 1 or 3 here
-				data->w_txt = ray.s_hor;
+				data->w_txt = 1 - ray.s_hor;
 				return (ray.d_hor);
 			}
 			else

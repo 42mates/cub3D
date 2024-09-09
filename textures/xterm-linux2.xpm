@@ -13,14 +13,15 @@ static char * image_name [] = {
 /**/
 "64 38 8 1",
 /**/
-" 	c #white",
+" 	c #000058",
 ".	c gray70",
 "X	c gray85",
 "o	c gray50",
+
 "O	c yellow",
 "+	c darkolivegreen",
 "@	c white",
-"#	c black",
+"#	c gray70",
 "              ######                                            ",
 "             ########                                           ",
 "            ##########    ...........................           ",
