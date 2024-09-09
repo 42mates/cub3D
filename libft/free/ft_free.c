@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 16:02:33 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/05 12:50:26 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/09 13:57:01 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ void	freentab(char **tab, int n, int heap)
 	i = 0;
 	if (tab == NULL)
 		return ;
-	while (tab[i] && i < n)
+	while (i < n && tab[i])
 	{
 		free(tab[i]);
 		i++;

@@ -53,7 +53,8 @@ read -p "Please enter the option you would like to test (default: 1): " option
 echo -e $NC
 make re
 if [ "$option" == "2" ]; then
-	COMMAND="./cub3D"
-else 
-	COMMAND="valgrind ./cub3D"
+	COMMAND="./cub3d"
+else
+	COMMAND="valgrind ./cub3d"
 fi
+test_maps

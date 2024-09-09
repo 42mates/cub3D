@@ -6,33 +6,31 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:28:04 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/09 11:34:34 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/09 13:47:28 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/cub3d.h"
 #include "../../includes/parsing.h"
 
-int	rgb_to_int(char *rgb_str)
+int	rgb_to_int(char **val)
 {
-	char	**values;
+	char	**rgb;
 	int		color;
 	int		rgb_int;
 	int		i;
 
-	if (!rgb_str)
-		return (-1);
-	values = ft_split(rgb_str, ',');
-	if (!values)
-		return (error("(debug) rgb_to_int", "ft_split failed"), -1);
+	rgb = get_rgb_tab(val + 1);
+	if (!rgb)
+		return (error("(debug) rgb_to_int", "get_rgb_tab failed"), -1);
 	i = 0;
 	rgb_int = 0;
 	while (i < 3)
 	{
-		color = atoi(values[i++]);
+		color = atoi(rgb[i++]);
 		rgb_int = (rgb_int << 8) + color;
 	}
-	freetab(values, TRUE);
+	freetab(rgb, TRUE);
 	return (rgb_int);
 }
 
@@ -67,20 +65,18 @@ int	check_path(char *elem_name, char *path)
  * @param color The color string to be checked.
  * @return 0 if the color is valid, otherwise 1.
  */
-int	check_color(char *elem_name, char *color)
+int	check_color(char **val)
 {
 	char	**rgb;
 	int		i;
 
-	if (!color)
-		return (error(elem_name, "no color found"));
-	if (ft_strlen(color) > 11)
-		return (error(elem_name, "invalid color format (string too long)"));
-	rgb = ft_split(color, ',');
-	if (!rgb || ft_tablen(rgb) != 3)
+	if (!val[1])
+		return (error(val[0], "no color found")); 
+	rgb = get_rgb_tab(val + 1);
+	if (ft_tablen(rgb) != 3)
 	{
 		freetab(rgb, TRUE);
-		return (error(elem_name, "invalid color format (3 values required)"));
+		return (error(val[0], "invalid color format (3 values required)"));
 	}
 	i = -1;
 	while (++i < 3)
@@ -88,7 +84,7 @@ int	check_color(char *elem_name, char *color)
 		if (!ft_isnum(rgb[i]) || ft_atoi(rgb[i]) < 0 || ft_atoi(rgb[i]) > 255)
 		{
 			freetab(rgb, TRUE);
-			error(elem_name, "invalid color format (Out of range or NaN)");
+			error(val[0], "invalid color format (Out of range or NaN)");
 			return (1);
 		}
 	}
@@ -107,15 +103,15 @@ int	check_element(char **val, t_data *data, char **tofind)
 {
 	int			i;
 
-	if (ft_tablen(val) != 2)
+	if (ft_tablen(val) < 2 || (ft_is(**val, "NSWE") && ft_tablen(val) != 2))
 		return (error(val[0], "invalid line format"));
 	i = ft_tabfind(val[0], tofind);
 	if (i >= 0)
 	{
 		if (i < 4 && !check_path(val[0], val[1]))
 			data->textures[i] = ft_strdup(val[1]);
-		else if (i >= 4 && !check_color(val[0], val[1]))
-			data->colors[i % 4] = rgb_to_int(val[1]);
+		else if (i >= 4 && !check_color(val))
+			data->colors[i % 4] = rgb_to_int(val);
 		else
 			return (1);
 		tofind[i][0] = 0;
