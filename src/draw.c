@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   draw.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 16:07:19 by akurochk          #+#    #+#             */
-/*   Updated: 2024/09/06 17:11:49 by akurochk         ###   ########.fr       */
+/*   Updated: 2024/09/06 17:36:01 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ void	draw(t_data *data)
 	printf("put_image\n");
 	mlx_put_image_to_window(data->mlx, data->win, data->img.img_ptr, 0, 0); // to show the image in the window
 	// put_minimap_to_window(data);									// looks like it should be here if minimap is on
-	mlx_destroy_image(data->mlx, data->img.img_ptr);						// no need it more	
+	mlx_destroy_image(data->mlx, data->img.img_ptr);						// no need it more
 }
 
 void draw_line(int x, float distance, t_data *data)

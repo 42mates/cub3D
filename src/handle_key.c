@@ -3,15 +3,53 @@
 /*                                                        :::      ::::::::   */
 /*   handle_key.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:27:45 by akurochk          #+#    #+#             */
-/*   Updated: 2024/09/06 17:27:52 by akurochk         ###   ########.fr       */
+/*   Updated: 2024/09/06 17:43:54 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 #include "../includes/src.h"
+
+int	is_blocked(char dir, t_data *data, float offset)
+{
+	float	new_x;	
+	float	new_y;	
+
+	new_x = data->pos_x;
+	new_y = data->pos_y;
+	printf("\033[0;31mis_blocked\n");
+	printf("current position:\t'%c' at i = %f, j = %f\n", 
+		data->map[(int)data->pos_y][(int)data->pos_x], 
+		data->pos_x, 
+		data->pos_y);
+	if (dir == 'x')
+		new_x = data->pos_x + offset;
+	else if (dir == 'y')
+		new_y = data->pos_y + offset;
+	printf("next position:\t\t'%c' at i = %f, j = %f\n", 
+		data->map[(int)new_y][(int)new_x], 
+		new_x, 
+		new_y);
+
+
+	if (ft_is(data->map[(int)new_y][(int)new_x], " 1\n")
+		|| !data->map[(int)new_y][(int)new_x])
+	{
+		if (dir == 'x' && offset > 0)
+			printf("blocked right\n");
+		else if (dir == 'x' && offset < 0)
+			printf("blocked left\n");
+		else if (dir == 'y' && offset > 0)
+			printf("blocked down\n");
+		else if (dir == 'y' && offset < 0)
+			printf("blocked up\n");
+		return (1);
+	}
+	return (0);
+}
 
 static void	move(t_data *data, int dir)
 {
@@ -23,7 +61,9 @@ static void	move(t_data *data, int dir)
 
 	a = data->dir_v + dir * M_PI_2;
 	dx = cos(a) * SPEED;
-	dy = -sin(a) * SPEED;
+	dy = sin(a) * SPEED;
+	printf("\033[0;32m");
+	printf("dx = %f, dy = %f\n", dx, dy);
 	
 	// // check wall collision
 	// d = ray_scane(); // get the distance to the wall x-direction
@@ -35,8 +75,12 @@ static void	move(t_data *data, int dir)
 	// //also we should check distance in the direction of the view
 	
 	// then update player's position
-	data->pos_x += dx;
-	data->pos_y += dy;
+	if (!is_blocked('x', data, dx))
+		data->pos_x += dx;
+	if (!data && !is_blocked('y', data, dy))
+		data->pos_y += dy;
+	
+	printf("\033[0m");
 
 	(void)d;	// cc "unused variable" silencer
 }
@@ -49,18 +93,16 @@ static void	rotate(t_data *data, int dir)
 
 int	handle_key(int key, t_data *data)
 {
-	printf("key = %d\n", key);
-
 	if (key == KEY_ESC)
 		handle_destroy(data);
 	else if (key == KEY_W)
 		move(data, 0);
 	else if (key == KEY_A)
-		move(data, 3);
+		move(data, 1);
 	else if (key == KEY_S)
 		move(data, 2);
 	else if (key == KEY_D)
-		move(data, 1);
+		move(data, 3);
 	else if (key == KEY_LEFT)
 		rotate(data, -1);
 	else if (key == KEY_RIGHT)
