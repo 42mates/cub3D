@@ -6,7 +6,7 @@
 /*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 16:07:19 by akurochk          #+#    #+#             */
-/*   Updated: 2024/09/09 16:08:00 by akurochk         ###   ########.fr       */
+/*   Updated: 2024/09/09 17:16:49 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	draw(t_data *data)
 	data->img.d_a = mlx_get_data_addr(data->img.img_ptr, &data->img.bpp, &data->img.s_l, &data->img.en);
 	draw_c_and_f(data);
 	ray_casting(data);											// to draw the walls
-	printf("put_image\n");
 	mlx_put_image_to_window(data->mlx, data->win, data->img.img_ptr, 0, 0); // to show the image in the window
 	// put_minimap_to_window(data);									// looks like it should be here if minimap is on
 	mlx_destroy_image(data->mlx, data->img.img_ptr);						// no need it more
@@ -51,8 +50,8 @@ void draw_line(int x, float distance, t_data *data)
 	float	step;			// step (vertical) to the next pixel in the source image 
 	
 
-	l_len = (float)SIZE_Y / distance; // length in scale in pixels;
-	step = data->img_txt[data->id_txt].size_y / l_len;
+	l_len = (float) SIZE_Y / distance; // length in scale in pixels;
+	step = (float) data->img_txt[data->id_txt].size_y / l_len;
 	l_pos = 0.0f;
 	
 	if (l_len > SIZE_Y) // if closer than '1' (we have grid size 1x1)

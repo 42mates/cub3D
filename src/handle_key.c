@@ -6,7 +6,7 @@
 /*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:27:45 by akurochk          #+#    #+#             */
-/*   Updated: 2024/09/09 16:18:01 by akurochk         ###   ########.fr       */
+/*   Updated: 2024/09/09 17:16:55 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,7 +84,6 @@ int	handle_key(int key, t_data *data)
 		rotate(data, 1);
 	else 					// nothing if another key. here we can add more reactions
 		return (0);
-	printf("pos_x = %f, pos_y = %f, dir_v = %f\n", data->pos_x, data->pos_y, data->dir_v);
 	draw(data);				// draw the new frame in case of handled key
 	return (0);
 }

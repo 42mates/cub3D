@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:15:39 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/09 13:25:51 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/09 17:19:24 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	init_data(t_data *data)
 	while (++i < 4)
 	{
 		data->img_txt[i].img_ptr = mlx_xpm_file_to_image(data->mlx, data->textures[i], &data->img_txt[i].size_x, &data->img_txt[i].size_y);
+		printf("data->textures[i] = %s\n", data->textures[i]);
 		if (!data->img_txt[i].img_ptr)
 			return (error("init_data()", "couldn't create image"));
 		data->img_txt[i].d_a = mlx_get_data_addr(data->img_txt[i].img_ptr, &data->img_txt[i].bpp, &data->img_txt[i].s_l, &data->img_txt[i].en);
