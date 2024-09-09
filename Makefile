@@ -6,7 +6,7 @@
 #    By: mbecker <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/28 15:03:26 by mbecker           #+#    #+#              #
-#    Updated: 2024/09/09 11:34:54 by mbecker          ###   ########.fr        #
+#    Updated: 2024/09/09 16:42:57 by mbecker          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,6 +29,7 @@ SRC =	src/parsing/parsing.c \
 		src/handle_destroy.c \
 		src/handle_key.c \
 		src/main.c \
+		src/minimap.c \
 		src/ray_casting.c 
 
 all: $(NAME)
