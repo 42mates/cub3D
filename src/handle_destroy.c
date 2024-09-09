@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 11:42:38 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/06 15:50:27 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/09 15:39:57 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,20 @@
 
 void	free_data(t_data *data)
 {
-	//free images if existing
-	//if (data->textures[0])
-		freentab(data->textures, 4, FALSE);
+	int	i;
+
+	i = -1;
+	//while (data->img_txt[++i].img_ptr)
+	//{
+	//	if (data->img_txt[i].img_ptr)
+	//		mlx_destroy_image(data->mlx, data->img_txt[i].img_ptr);
+	//	if (data->img_txt[i].d_a)
+	//		free(data->img_txt[i].d_a);
+	//}
+	//if (data->img.img_ptr)
+	//	mlx_destroy_image(data->mlx, data->img.img_ptr);
+
+	freentab(data->textures, 4, FALSE);
 	freetab(data->map, TRUE);
 }
 

@@ -6,12 +6,12 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:41:56 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/06 15:49:58 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/09 15:40:05 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/cub3d.h"
-#include "../includes/parsing.h"
+#include "../../includes/cub3d.h"
+#include "../../includes/parsing.h"
 
 int	error(char *msg1, char *msg2)
 {
@@ -61,18 +61,17 @@ int	parsing(int ac, char **av, t_data *data)
 	char	*ptr;
 	int		mapfd;
 
-	if (ac < 2)
-		return (error("too few arguments", NULL));
-	else if (ac > 2)
-		return (error("too many arguments", NULL));
 	data->textures[0] = NULL;
 	data->textures[1] = NULL;
 	data->textures[2] = NULL;
 	data->textures[3] = NULL;
 	data->map = NULL;
-
+	if (ac < 2)
+		return (error("too few arguments", NULL));
+	else if (ac > 2)
+		return (error("too many arguments", NULL));
 	ptr = ft_strrstr(av[1], ".cub");
-	if (!ptr || ft_strlen(ptr) != 4)
+	if (!ptr || ft_strlen(ptr) != 4 || ptr == av[1] || *(ptr - 1) == '/')
 		return (error("invalid map name", NULL));
 	mapfd = open(av[1], O_RDONLY);
 	if (mapfd == -1)

@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:15:39 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/06 14:25:20 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/09 13:25:51 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,6 @@ int	display_wdw(t_data *data, char *title, int width, int height)
 	}
 	return (0);
 }
-
-//void read_textures(t_data *data)
-//{
-
-//}
 
 int	init_data(t_data *data)
 {

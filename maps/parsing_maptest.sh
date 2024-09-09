@@ -11,11 +11,11 @@ LBLUE="\033[0;34m"
 GREY="\033[1;37m"
 NC="\033[0m"
 
-test_ok()
+test_maps()
 {
 	for file in maps/tests/ok*; do
 		echo -e $LGREEN"Testing "$GREEN$file$NC
-		./cub3d $file
+		$COMMAND $file
 		echo ""
 		echo -en $LBLUE"Press any key to continue, or q to quit: "$NC
 		read -a input
@@ -25,13 +25,15 @@ test_ok()
 		fi
 		echo ""
 	done
-}
 
-test_invalid()
-{
+	echo -e $LYELLOW"Testing "$YELLOW"[empty]"$NC
+	$COMMAND
+	echo -e $LYELLOW"Testing "$YELLOW"maps/tests/.cub"$NC
+	$COMMAND map/tests/.cub
+
 	for file in maps/tests/invalid*; do
 		echo -e $LYELLOW"Testing "$YELLOW$file$NC
-		./cub3d $file
+		$COMMAND $file
 		echo ""
 		echo -en $LBLUE"Press any key to continue, or q to quit: "$NC
 		read -a input
@@ -43,21 +45,16 @@ test_invalid()
 	done
 }
 
+
 echo -e $RED"Welcome to the cub3d map tester!"$LRED
-echo -e 1- "Test valid maps"
-echo -e 2- "Test invalid maps"
-echo -e 3- "Test both"
-read -p "Please enter the option you would like to test (1-3): " option
+echo -e 1- "Test with valgrind"
+echo -e 2- "Test without valgrind"
+read -p "Please enter the option you would like to test (default: 1): " option
 echo -e $NC
 make re
-if [ "$option" == "1" ]; then
-	test_ok
-elif [ "$option" == "2" ]; then
-	test_invalid
-elif [ "$option" == "3" ] || [ -z $option ]; then
-	test_ok
-	test_invalid
+if [ "$option" == "2" ]; then
+	COMMAND="./cub3d"
 else
-	echo -e $RED"Invalid option. Exiting..."$NC
-	exit 1
+	COMMAND="valgrind ./cub3d"
 fi
+test_maps
