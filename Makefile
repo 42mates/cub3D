@@ -6,7 +6,7 @@
 #    By: mbecker <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/28 15:03:26 by mbecker           #+#    #+#              #
-#    Updated: 2024/09/09 11:34:54 by mbecker          ###   ########.fr        #
+#    Updated: 2024/09/10 14:45:26 by mbecker          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,9 @@ SRC =	src/parsing/parsing.c \
 		src/get_position.c \
 		src/handle_destroy.c \
 		src/handle_key.c \
+		src/init.c \
 		src/main.c \
+		src/minimap.c \
 		src/ray_casting.c 
 
 all: $(NAME)
@@ -51,6 +53,7 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME)
+#	@make -C libft fclean
 	@echo "$(RED)FULL CLEAN FINISHED$(NC)"
 
 re: fclean all
@@ -78,3 +81,6 @@ YELLOW =\033[1;33m
 LYELLOW =\033[0;33m
 GREY =\033[1;37m
 NC =\033[0m
+
+test: clean
+	@$(CC) $(CFLAGS) -o test test.c $(LIBS);\

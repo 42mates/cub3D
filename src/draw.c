@@ -6,7 +6,7 @@
 /*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 16:07:19 by akurochk          #+#    #+#             */
-/*   Updated: 2024/09/09 17:16:49 by akurochk         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:32:41 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,8 +36,8 @@ void	draw(t_data *data)
 	data->img.d_a = mlx_get_data_addr(data->img.img_ptr, &data->img.bpp, &data->img.s_l, &data->img.en);
 	draw_c_and_f(data);
 	ray_casting(data);											// to draw the walls
+	draw_minimap(data);											// to draw the minimap
 	mlx_put_image_to_window(data->mlx, data->win, data->img.img_ptr, 0, 0); // to show the image in the window
-	// put_minimap_to_window(data);									// looks like it should be here if minimap is on
 	mlx_destroy_image(data->mlx, data->img.img_ptr);						// no need it more
 }
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:15:39 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/09 17:19:24 by akurochk         ###   ########.fr       */
+/*   Updated: 2024/09/10 14:46:06 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,30 +21,6 @@ int	display_wdw(t_data *data, char *title, int width, int height)
 		free_data(data);
 		free(data->mlx);
 		exit(1);
-	}
-	return (0);
-}
-
-int	init_data(t_data *data)
-{
-	int i;
-
-	data->pos_x = 0.0;
-	data->pos_y = 0.0;
-	data->dir_v = 0.0;
-	data->win = NULL;
-	data->mlx = mlx_init();
-	if (!data->mlx)
-		return (free_data(data), 1);
-
-	i = -1;
-	while (++i < 4)
-	{
-		data->img_txt[i].img_ptr = mlx_xpm_file_to_image(data->mlx, data->textures[i], &data->img_txt[i].size_x, &data->img_txt[i].size_y);
-		printf("data->textures[i] = %s\n", data->textures[i]);
-		if (!data->img_txt[i].img_ptr)
-			return (error("init_data()", "couldn't create image"));
-		data->img_txt[i].d_a = mlx_get_data_addr(data->img_txt[i].img_ptr, &data->img_txt[i].bpp, &data->img_txt[i].s_l, &data->img_txt[i].en);
 	}
 	return (0);
 }
