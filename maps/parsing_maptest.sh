@@ -27,9 +27,14 @@ test_maps()
 	done
 
 	echo -e $LYELLOW"Testing "$YELLOW"[empty]"$NC
+	echo ""
 	$COMMAND
+	echo ""
+
 	echo -e $LYELLOW"Testing "$YELLOW"maps/tests/.cub"$NC
+	echo ""
 	$COMMAND map/tests/.cub
+	echo ""
 
 	for file in maps/tests/invalid*; do
 		echo -e $LYELLOW"Testing "$YELLOW$file$NC

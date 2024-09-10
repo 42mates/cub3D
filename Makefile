@@ -6,7 +6,7 @@
 #    By: mbecker <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/28 15:03:26 by mbecker           #+#    #+#              #
-#    Updated: 2024/09/10 14:45:26 by mbecker          ###   ########.fr        #
+#    Updated: 2024/09/10 18:37:05 by mbecker          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -52,8 +52,8 @@ clean:
 	@rm -rf *.out* */*.out testexe *.dSYM* .vscode
 
 fclean: clean
-	@rm -f $(NAME)
-#	@make -C libft fclean
+	@rm -rf $(NAME) minilibx-linux
+	@make -C libft fclean
 	@echo "$(RED)FULL CLEAN FINISHED$(NC)"
 
 re: fclean all

@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 11:42:38 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/10 16:41:03 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/10 18:32:42 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,16 @@
 
 void	free_data(t_data *data)
 {
-	freentab(data->textures, 4, FALSE);
+	if (data->textures[0])
+		free(data->textures[0]);
+	if (data->textures[1])
+		free(data->textures[1]);
+	if (data->textures[2])
+		free(data->textures[2]);
+	if (data->textures[3])
+		free(data->textures[3]);
+	if (data->map)
+
 	freetab(data->map, TRUE);
 }
 
