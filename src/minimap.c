@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minimap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 16:30:28 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/10 15:21:19 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/10 16:23:09 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,23 @@ static int	get_mini_color(t_data *data, int i, int j)
 //	mlx_put_image_to_window(data->mlx, data->win, data->minimap.img_ptr, MINIMAP_SCALE, MINIMAP_SCALE);
 //}
 
+void	put_pixel_to_img(t_data *data, int x, int y, int color)
+{
+	unsigned int	*dst;
+	int i;
+	int j;
+
+	dst = (unsigned int *)data->img.d_a + MINIMAP_SCALE * (x + 1) + MINIMAP_SCALE * SIZE_X * (y + 1);
+
+	i = -1;
+	while (++i < MINIMAP_SCALE)
+	{
+		j = -1;
+		while (++j < MINIMAP_SCALE)
+			dst[j + SIZE_X * i] = color;
+	}
+}
+
 void	draw_minimap(t_data *data)
 {
 	int	i;
@@ -77,14 +94,14 @@ void	draw_minimap(t_data *data)
 	int	color;
 
 	i = -1;
-	while (++i < MINIMAP_SCALE * data->map_w)
+	while (++i < data->map_w)
 	{
 		j = -1;
-		while (++j < MINIMAP_SCALE * data->map_h)
+		while (++j < data->map_h)
 		{
-			color = get_mini_color(data, i / MINIMAP_SCALE, j / MINIMAP_SCALE);
+			color = get_mini_color(data, i, j);
 			if (color)
-				mlx_pixel_put(data->mlx, data->win, i, j, color);
+				put_pixel_to_img(data, i, j, color);
 		}
 	}
 }
