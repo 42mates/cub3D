@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_key.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:27:45 by akurochk          #+#    #+#             */
-/*   Updated: 2024/09/09 17:16:55 by akurochk         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:58:45 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,17 +41,7 @@ static void	move(t_data *data, int dir)
 	a = data->dir_v + dir * M_PI_2;
 	dx = cos(a) * SPEED;
 	dy = sin(a) * SPEED;
-	
-	// // check wall collision
-	// d = ray_scane(); // get the distance to the wall x-direction
-	// if (d * d < dx * dx) // if we cant do the step, we dont do it
-	// 	dx = 0.0f;
-	// d = ray_scane(); // same for y-direction
-	// if (d * d < dy * dy)
-	// 	dy = 0.0f;
-	// //also we should check distance in the direction of the view
-	
-	// then update player's position
+
 	if (!is_blocked('x', data, dx))
 		data->pos_x += dx;
 	if (!is_blocked('y', data, dy))

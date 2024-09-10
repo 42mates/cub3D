@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:41:56 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/09 17:58:13 by akurochk         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:54:56 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +39,6 @@ int	parse_file(t_data *data, int mapfd)
 		return (error("init_data()", "error retrieving file"));
 	close(mapfd);
 	tofind = (char **)malloc(sizeof(char *) * 7);
-	// tofind[0] = ft_strdup("NO");
-	// tofind[1] = ft_strdup("SO");
-	// tofind[2] = ft_strdup("WE");
-	// tofind[3] = ft_strdup("EA");
 	tofind[0] = ft_strdup("WE");
 	tofind[1] = ft_strdup("NO");
 	tofind[2] = ft_strdup("EA");
