@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 11:03:57 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/10 13:03:55 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/10 14:46:02 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int		init_data(t_data *data);
 /*********** MINIMAP.C        ***********/
 void	draw_minimap(t_data *data);
 
-/*********** RAY_CASTING.C    ***********/ 
+/*********** RAY_CASTING.C      ***********/ 
 void	ray_casting(t_data *data);
 
 /*********** PARSING.C        ***********/

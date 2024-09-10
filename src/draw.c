@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 16:07:19 by akurochk          #+#    #+#             */
-/*   Updated: 2024/09/10 13:13:00 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/10 15:27:10 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	draw(t_data *data)
 	draw_c_and_f(data);
 	ray_casting(data);											// to draw the walls
 	mlx_put_image_to_window(data->mlx, data->win, data->img.img_ptr, 0, 0); // to show the image in the window
-	draw_minimap(data);										// to draw the minimap
+	draw_minimap(data);											// to draw the minimap
 	mlx_destroy_image(data->mlx, data->img.img_ptr);						// no need it more
 }
 

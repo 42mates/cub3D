@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 10:40:57 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/09 17:38:59 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/10 15:18:41 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@
 # define KEY_ESC	65307
 
 //number of pixels per element in the minimap
-# define MINIMAP_SCALE	10
+# define MINIMAP_SCALE	8
 # define MINIMAP_PLAYER	0xEB5149
 # define MINIMAP_WALL	0x17181A
 # define MINIMAP_GROUND	0xF1EFDF
