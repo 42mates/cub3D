@@ -6,7 +6,7 @@
 /*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 17:15:04 by akurochk          #+#    #+#             */
-/*   Updated: 2024/09/09 17:10:55 by akurochk         ###   ########.fr       */
+/*   Updated: 2024/09/10 17:01:14 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -128,7 +128,7 @@ void	ray_casting(t_data *data)
 
 	while (++n_line < SIZE_X) // to draw lines in the window
 	{
-		draw_line(SIZE_X - n_line, ray_scan(l_dir, data) * cos(data->dir_v - l_dir), data);
+		draw_line(SIZE_X - n_line - 1, ray_scan(l_dir, data) * cos(data->dir_v - l_dir), data);
 		l_dir += step;	// change direction to the next line
 	}
 }
