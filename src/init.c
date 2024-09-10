@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 12:14:47 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/10 14:34:12 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/10 16:39:25 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,6 @@ int	init_img(t_data *data)
 	int	i;
 
 	i = -1;
-	data->minimap.img_ptr = mlx_new_image(
-		data->mlx, data->map_w * MINIMAP_SCALE, data->map_h * MINIMAP_SCALE);
-	if (!data->minimap.img_ptr)
-		return (error("init_img()", "couldn't create image"));
-	data->minimap.d_a = mlx_get_data_addr(data->minimap.img_ptr,
-		&data->minimap.bpp, &data->minimap.s_l, &data->minimap.en);
 	while (++i < 4)
 	{
 		data->img_txt[i].img_ptr = mlx_xpm_file_to_image(
