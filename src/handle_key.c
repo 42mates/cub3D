@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:27:45 by akurochk          #+#    #+#             */
-/*   Updated: 2024/09/10 16:58:45 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/10 17:40:54 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int	is_blocked(char dir, t_data *data, float offset)
 {
-	float	new_x;	
-	float	new_y;	
+	float	new_x;
+	float	new_y;
 
 	new_x = data->pos_x;
 	new_y = data->pos_y;
@@ -32,22 +32,17 @@ int	is_blocked(char dir, t_data *data, float offset)
 
 static void	move(t_data *data, int dir)
 {
-
 	float	dx;
 	float	dy;
-	float	a;		// angle
-	float	d;		// distance to the wall x or y direction
+	float	a;
 
 	a = data->dir_v + dir * M_PI_2;
 	dx = cos(a) * SPEED;
 	dy = sin(a) * SPEED;
-
 	if (!is_blocked('x', data, dx))
 		data->pos_x += dx;
 	if (!is_blocked('y', data, dy))
 		data->pos_y -= dy;
-
-	(void)d;	// cc "unused variable" silencer
 }
 
 static void	rotate(t_data *data, int dir)
@@ -72,8 +67,8 @@ int	handle_key(int key, t_data *data)
 		rotate(data, -1);
 	else if (key == KEY_RIGHT)
 		rotate(data, 1);
-	else 					// nothing if another key. here we can add more reactions
+	else
 		return (0);
-	draw(data);				// draw the new frame in case of handled key
+	draw(data);
 	return (0);
 }
