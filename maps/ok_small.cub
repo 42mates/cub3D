@@ -1,7 +1,7 @@
-NO ./textures/xterm-linux.xpm
-SO ./textures/xterm-linux.xpm
-WE ./textures/xterm-linux.xpm
-EA ./textures/xterm-linux.xpm
+NO ./textures/N.xpm
+SO ./textures/S.xpm
+WE ./textures/W.xpm
+EA ./textures/E.xpm
 C 135,206,235
 F 29,93,54
 
