@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 11:03:57 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/09 16:32:23 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/10 13:03:55 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,9 @@ int		handle_destroy(t_data *data);
 
 /*********** HANDLE_KEY.C     ***********/
 int		handle_key(int key, t_data *data);
+
+/*********** INIT_DATA.C      ***********/
+int		init_data(t_data *data);
 
 /*********** MINIMAP.C        ***********/
 void	draw_minimap(t_data *data);
