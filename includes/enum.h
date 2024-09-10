@@ -3,33 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   enum.h                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 13:49:41 by akurochk          #+#    #+#             */
-/*   Updated: 2024/08/29 14:04:14 by akurochk         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:54:13 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ENUM_H
 # define ENUM_H
 
-// We no need all of the enums values: delete useless  befor evaluation
-
 // Events for MiniLibX for hooks
 enum {
-	ON_KEYDOWN = 2,		// used
+	ON_KEYDOWN = 2,
 	ON_KEYUP = 3,
 	ON_MOUSEDOWN = 4,
 	ON_MOUSEUP = 5,
 	ON_MOUSEMOVE = 6,
 	ON_EXPOSE = 12,
-	ON_DESTROY = 17		// used
+	ON_DESTROY = 17
 };
 
 // Masks for MiniLibX for hooks
 enum {
-	NoEventMask = 0L,			// used
-	KeyPressMask = 1L<<0,		// used
+	NoEventMask = 0L,	
+	KeyPressMask = 1L<<0,
 	KeyReleaseMask = 1L<<1,
 	ButtonPressMask	= 1L<<2,
 	ButtonReleaseMask = 1L<<3,

@@ -3,17 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   get_position.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:05:39 by akurochk          #+#    #+#             */
-/*   Updated: 2024/09/09 17:17:10 by akurochk         ###   ########.fr       */
+/*   Updated: 2024/09/10 17:03:04 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../includes/cub3d.h"
 #include "../includes/src.h"
 
-static void get_view(t_data *data, char c)
+static void	get_view(t_data *data, char c)
 {
 	if (c == 'N')
 		data->dir_v = 0.5f * M_PI;
@@ -25,22 +25,22 @@ static void get_view(t_data *data, char c)
 		data->dir_v = -0.5f * M_PI;
 }
 
-void get_position(t_data *data)
+void	get_position(t_data *data)
 {
-	int i;
+	int	i;
 	int	j;
 
 	i = -1;
-	while(++i , data->map_h)		// map_h is number of lines in the map
+	while (++i, data->map_h)
 	{
 		j = -1;
-		while (data->map[i][++j])	// hope lines ended with '\0'
+		while (data->map[i][++j])
 		{
 			if (ft_strchr("NEWS", data->map[i][j]))
 			{
-				data->pos_x = (float) j + 0.5f;	// player's x position
-				data->pos_y = (float) i + 0.5f;	// player's y position
-				get_view(data, data->map[i][j]);	// get player's view direction
+				data->pos_x = (float)j + 0.5f;
+				data->pos_y = (float)i + 0.5f;
+				get_view(data, data->map[i][j]);
 				return ;
 			}
 		}

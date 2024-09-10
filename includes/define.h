@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 10:40:57 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/10 15:18:41 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/10 16:52:59 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,17 @@
 # define F 0
 # define C 1
 
+// width of the window
 # define SIZE_X 	1280
+// height of the window
 # define SIZE_Y 	720
-# define FOV		1.0471976f // (M_PIf / 3) field_of_view 60 degrees in radians ( is used for console games )
 
-# define SPEED		0.1f // 0.2f : walk 20% of block size each keypress
-# define SPEED_R	0.05f // 0.2f : view direction roration 0.2*PI each keypress
+// field of view (60 degrees)
+# define FOV		1.0471976f
+
+# define SPEED		0.2f
+// rotation speed
+# define SPEED_R	0.05f
 
 # define KEY_W 		119
 # define KEY_A		97
@@ -42,6 +47,7 @@
 
 //number of pixels per element in the minimap
 # define MINIMAP_SCALE	8
+
 # define MINIMAP_PLAYER	0xEB5149
 # define MINIMAP_WALL	0x17181A
 # define MINIMAP_GROUND	0xF1EFDF

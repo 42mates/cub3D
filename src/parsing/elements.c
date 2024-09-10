@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:28:04 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/09 13:47:28 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/10 16:55:28 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	check_color(char **val)
 	int		i;
 
 	if (!val[1])
-		return (error(val[0], "no color found")); 
+		return (error(val[0], "no color found"));
 	rgb = get_rgb_tab(val + 1);
 	if (ft_tablen(rgb) != 3)
 	{

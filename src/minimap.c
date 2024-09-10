@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minimap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 16:30:28 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/10 16:23:09 by akurochk         ###   ########.fr       */
+/*   Updated: 2024/09/10 16:57:45 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,54 +30,14 @@ static int	get_mini_color(t_data *data, int i, int j)
 	return (0);
 }
 
-//static int	create_mini_map(t_data *data)
-//{
-//	int				i;
-//	int				j;
-//	int				color;
-//	unsigned int	*dst;
-
-//	j = 0;
-//	dst = (unsigned int *)data->img.d_a;
-//	while (j < data->map_h)
-//	{
-//		i = 0;
-//		while (i < data->map_w)
-//		{
-//			color = get_mini_color(data, i, j);
-//			if (color)
-//				*dst = color;
-//			dst++;
-//			i++;
-//		}
-//		dst = (unsigned int *)data->img.d_a + SIZE_X * j;
-//		j++;
-//	}
-//	return (0);
-//}
-
-//void	draw_minimap(t_data *data)
-//{
-//	static int	first = 0;
-
-//	if (!first)
-//	{
-//		create_mini_map(data);
-//		first = 1;
-//	}
-//	//else
-//	//	update_minimap(data);
-//	mlx_put_image_to_window(data->mlx, data->win, data->minimap.img_ptr, MINIMAP_SCALE, MINIMAP_SCALE);
-//}
-
 void	put_pixel_to_img(t_data *data, int x, int y, int color)
 {
 	unsigned int	*dst;
-	int i;
-	int j;
+	int				i;
+	int				j;
 
-	dst = (unsigned int *)data->img.d_a + MINIMAP_SCALE * (x + 1) + MINIMAP_SCALE * SIZE_X * (y + 1);
-
+	dst = (unsigned int *)data->img.d_a + MINIMAP_SCALE * (x + 1)
+		+ MINIMAP_SCALE * SIZE_X * (y + 1);
 	i = -1;
 	while (++i < MINIMAP_SCALE)
 	{
