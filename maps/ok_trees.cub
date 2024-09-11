@@ -1,7 +1,7 @@
 NO ./textures/w3d/trees.xpm
-SO ./textures/w3d/trees.xpm
-WE ./textures/w3d/trees.xpm
-EA ./textures/w3d/trees.xpm
+SO ./textures/w3d/trees0.xpm
+WE ./textures/w3d/trees1.xpm
+EA ./textures/w3d/trees2.xpm
 C 0,  0   , 0
 F 81, 60, 28
 
