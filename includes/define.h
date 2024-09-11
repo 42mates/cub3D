@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 10:40:57 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/11 12:59:44 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/11 15:16:18 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@
 
 # define SPEED		0.2f
 // rotation speed
-# define SPEED_R	0.05f
+# define SPEED_R	0.1f
 
 # define KEY_W 		119
 # define KEY_A		97

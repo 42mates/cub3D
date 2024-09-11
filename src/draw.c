@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 16:07:19 by akurochk          #+#    #+#             */
-/*   Updated: 2024/09/11 12:58:04 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/11 16:19:50 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ void	draw_line(int x, float distance, t_data *data)
 	float	l_pos;
 	float	step;
 
-	l_len = (float)SIZE_Y / distance;
+	l_len = (2 / distance) * ((SIZE_Y / 2) / tan(FOV / 2));
 	step = (float)data->img_txt[data->id_txt].size_y / l_len;
 	l_pos = 0.0f;
 	if (l_len > SIZE_Y)
