@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_key.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:27:45 by akurochk          #+#    #+#             */
-/*   Updated: 2024/09/10 17:40:54 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/11 11:39:24 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,8 @@ int	is_blocked(char dir, t_data *data, float offset)
 	float	new_x;
 	float	new_y;
 
-	new_x = data->pos_x;
-	new_y = data->pos_y;
+	new_x = data->p_x;
+	new_y = data->p_y;
 	if (dir == 'x')
 		new_x += offset;
 	else if (dir == 'y')
@@ -40,9 +40,9 @@ static void	move(t_data *data, int dir)
 	dx = cos(a) * SPEED;
 	dy = sin(a) * SPEED;
 	if (!is_blocked('x', data, dx))
-		data->pos_x += dx;
+		data->p_x += dx;
 	if (!is_blocked('y', data, dy))
-		data->pos_y -= dy;
+		data->p_y -= dy;
 }
 
 static void	rotate(t_data *data, int dir)

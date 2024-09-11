@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   src.h                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 11:03:57 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/10 16:54:30 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/10 17:33:44 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ int		handle_key(int key, t_data *data);
 
 /*********** INIT_DATA.C      ***********/
 int		init_data(t_data *data);
+void	init_ray(t_ray *ray, float a, t_data *data);
 
 /*********** MINIMAP.C        ***********/
 void	draw_minimap(t_data *data);
