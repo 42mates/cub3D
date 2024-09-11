@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_key.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:27:45 by akurochk          #+#    #+#             */
-/*   Updated: 2024/09/11 11:39:24 by akurochk         ###   ########.fr       */
+/*   Updated: 2024/09/11 12:57:18 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,12 @@ int	handle_key(int key, t_data *data)
 		rotate(data, -1);
 	else if (key == KEY_RIGHT)
 		rotate(data, 1);
+	else if (key == KEY_M)
+		data->allow_minimap = !data->allow_minimap;
+	else if (key == KEY_MIN && data->mini_scale > 2)
+		data->mini_scale -= 1;
+	else if (key == KEY_PLUS && data->mini_scale < 16)
+		data->mini_scale += 1;
 	else
 		return (0);
 	draw(data);

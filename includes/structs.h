@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:20:15 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/10 17:49:24 by akurochk         ###   ########.fr       */
+/*   Updated: 2024/09/11 12:55:35 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,20 +45,22 @@ typedef struct s_img
 
 typedef struct s_data
 {
-	char	*textures[4];
-	int		colors[2];
-	char	**map;
-	int		map_h;
-	int		map_w;
-	float	p_x;
-	float	p_y;
-	float	dir_v;
-	t_img	img;
-	t_img	img_txt[4];
-	int		id_txt;
-	float	w_txt;
-	void	*win;
-	void	*mlx;
+	char			*textures[4];
+	int				colors[2];
+	char			**map;
+	int				map_h;
+	int				map_w;
+	float			p_x;
+	float			p_y;
+	float			dir_v;
+	t_img			img;
+	t_img			img_txt[4];
+	int				id_txt;
+	float			w_txt;
+	int				allow_minimap;
+	unsigned char	mini_scale;
+	void			*win;
+	void			*mlx;
 }			t_data;
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minimap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 16:30:28 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/10 17:48:49 by akurochk         ###   ########.fr       */
+/*   Updated: 2024/09/11 12:56:06 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,13 @@ void	put_pixel_to_img(t_data *data, int x, int y, int color)
 	int				i;
 	int				j;
 
-	dst = (unsigned int *)data->img.d_a + MINIMAP_SCALE * (x + 1)
-		+ MINIMAP_SCALE * SIZE_X * (y + 1);
+	dst = (unsigned int *)data->img.d_a + data->mini_scale * (x + 1)
+		+ data->mini_scale * SIZE_X * (y + 1);
 	i = -1;
-	while (++i < MINIMAP_SCALE)
+	while (++i < data->mini_scale)
 	{
 		j = -1;
-		while (++j < MINIMAP_SCALE)
+		while (++j < data->mini_scale)
 			dst[j + SIZE_X * i] = color;
 	}
 }

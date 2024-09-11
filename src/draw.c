@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 16:07:19 by akurochk          #+#    #+#             */
-/*   Updated: 2024/09/10 17:38:14 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/11 12:58:04 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,8 @@ void	draw(t_data *data)
 			&data->img.s_l, &data->img.en);
 	draw_c_and_f(data);
 	ray_casting(data);
-	draw_minimap(data);
+	if (data->allow_minimap)
+		draw_minimap(data);
 	mlx_put_image_to_window(data->mlx, data->win, data->img.img_ptr, 0, 0);
 	mlx_destroy_image(data->mlx, data->img.img_ptr);
 }

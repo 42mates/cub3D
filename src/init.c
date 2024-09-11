@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 12:14:47 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/10 17:51:59 by akurochk         ###   ########.fr       */
+/*   Updated: 2024/09/11 12:55:28 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ int	init_data(t_data *data)
 	data->p_x = 0.0;
 	data->p_y = 0.0;
 	data->dir_v = 0.0;
+	data->allow_minimap = 1;
+	data->mini_scale = MINIMAP_SCALE;
 	data->win = NULL;
 	data->mlx = mlx_init();
 	if (!data->mlx)
@@ -45,7 +47,7 @@ int	init_data(t_data *data)
 	return (0);
 }
 
-static int		get_sign(float x)
+static int	get_sign(float x)
 {
 	if (x < 0.0f)
 		return (-1);

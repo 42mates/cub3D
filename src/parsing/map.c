@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/30 12:45:46 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/09 11:34:34 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/11 12:02:18 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ int	check_middle_char(char **map, int i, int j, int *has_player)
 	if (!ft_is(map[i][j], " 01NSWE\n"))
 		return (error("invalid map", "forbidden character"));
 	else if (!is_valid_ground(map, i, j))
-		return (error("invalid map", "breach found"));
+		return (error("invalid map", "breach found or invalid char"));
 	else if (has_multiple_players(map[i][j]))
 		return (1);
 	return (0);

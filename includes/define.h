@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 10:40:57 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/10 16:52:59 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/11 12:59:44 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,9 @@
 # define KEY_LEFT	65361
 # define KEY_RIGHT	65363
 # define KEY_ESC	65307
+# define KEY_M		109
+# define KEY_MIN	45
+# define KEY_PLUS	61
 
 //number of pixels per element in the minimap
 # define MINIMAP_SCALE	8

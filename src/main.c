@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:15:39 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/10 16:55:49 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/11 13:05:41 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,22 @@ int	display_wdw(t_data *data, char *title, int width, int height)
 	return (0);
 }
 
+void	print_controls(void)
+{
+	write(1, "WASD - move\n", 12);
+	write(1, "Arrows - rotate\n", 17);
+	write(1, "M - toggle minimap\n", 20);
+	write(1, "+- - change minimap scale\n", 27);
+	write(1, "ESC - exit\n", 11);
+}
+
 int	main(int ac, char **av)
 {
 	t_data	data;
 
 	if (parsing(ac, av, &data))
 		return (free_data(&data), 1);
+	print_controls();
 	if (init_data(&data))
 		return (free_data(&data), 1);
 	get_position(&data);

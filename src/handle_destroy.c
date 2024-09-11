@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 11:42:38 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/10 18:32:42 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/11 11:54:23 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ void	free_data(t_data *data)
 	if (data->textures[3])
 		free(data->textures[3]);
 	if (data->map)
-
-	freetab(data->map, TRUE);
+		freetab(data->map, TRUE);
 }
 
 int	handle_destroy(t_data *data)

@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 15:28:04 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/10 16:55:28 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/11 12:06:56 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int	check_path(char *elem_name, char *path)
 		return (error(elem_name, "no path found"));
 	ptr = ft_strrstr(path, ".xpm");
 	if (!ptr || ft_strlen(ptr) != 4)
-		return (error(path, "invalid texture file"));
+		return (error(path, "invalid texture file format (use .xpm)"));
 	fd = open(path, O_RDONLY);
 	if (fd == -1)
 		return (error(path, strerror(errno)));
