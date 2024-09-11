@@ -6,7 +6,7 @@
 /*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:15:39 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/11 13:05:41 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/11 13:19:24 by mbecker          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,20 @@ int	display_wdw(t_data *data, char *title, int width, int height)
 
 void	print_controls(void)
 {
-	write(1, "WASD - move\n", 12);
-	write(1, "Arrows - rotate\n", 17);
-	write(1, "M - toggle minimap\n", 20);
-	write(1, "+- - change minimap scale\n", 27);
-	write(1, "ESC - exit\n", 11);
+	write(1, "\033[1;35m", 7);
+	write(1, "******************************************\n", 44);
+	write(1, "*                                        *\n", 44);
+	write(1, "*              CUB3D MENU                *\n", 44);
+	write(1, "*                                        *\n", 44);
+	write(1, "******************************************\n", 44);
+	write(1, "\n", 1);
+	write(1, "\033[0;35m", 7);
+	write(1, "\t      WASD - move\n", 19);
+	write(1, "\t        ←→ - rotate\n", 25);
+	write(1, "\t         M - toggle minimap\n", 29);
+	write(1, "\t        +- - change minimap scale\n", 35);
+	write(1, "\t       ESC - exit\n", 19);
+	write(1, "\033[0m", 4);
 }
 
 int	main(int ac, char **av)
