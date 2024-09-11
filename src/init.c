@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 12:14:47 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/10 16:56:57 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/10 17:51:59 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,8 @@ int	init_img(t_data *data)
 
 int	init_data(t_data *data)
 {
-	data->pos_x = 0.0;
-	data->pos_y = 0.0;
+	data->p_x = 0.0;
+	data->p_y = 0.0;
 	data->dir_v = 0.0;
 	data->win = NULL;
 	data->mlx = mlx_init();
@@ -43,4 +43,27 @@ int	init_data(t_data *data)
 	if (init_img(data))
 		return (1);
 	return (0);
+}
+
+static int		get_sign(float x)
+{
+	if (x < 0.0f)
+		return (-1);
+	if (x == 0)
+		return (0);
+	return (1);
+}
+
+void	init_ray(t_ray *r, float a, t_data *data)
+{
+	r->dx = cos(a);
+	r->dy = -sin(a);
+	r->x_sign = get_sign(r->dx);
+	r->y_sign = get_sign(r->dy);
+	r->x_v = (int) data->p_x;
+	r->y_h = (int) data->p_y;
+	if (r->x_sign > 0)
+		r->x_v += 1.0f;
+	if (r->y_sign > 0)
+		r->y_h += 1.0f;
 }

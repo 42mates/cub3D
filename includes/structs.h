@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   structs.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:20:15 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/10 16:46:47 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/10 17:49:24 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,14 @@ typedef struct s_ray
 	float	dy;
 	int		x_sign;
 	int		y_sign;
-	float	x_hor;
-	float	y_hor;
-	float	x_ver;
-	float	y_ver;
+	float	x_h;
+	float	y_h;
+	float	x_v;
+	float	y_v;
 	float	s_hor;
 	float	s_ver;
-	float	d_hor;
-	float	d_ver;
+	float	d_h;
+	float	d_v;
 
 }			t_ray;
 
@@ -50,8 +50,8 @@ typedef struct s_data
 	char	**map;
 	int		map_h;
 	int		map_w;
-	float	pos_x;
-	float	pos_y;
+	float	p_x;
+	float	p_y;
 	float	dir_v;
 	t_img	img;
 	t_img	img_txt[4];

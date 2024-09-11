@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_position.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:05:39 by akurochk          #+#    #+#             */
-/*   Updated: 2024/09/10 17:03:04 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/10 17:48:49 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,8 +38,8 @@ void	get_position(t_data *data)
 		{
 			if (ft_strchr("NEWS", data->map[i][j]))
 			{
-				data->pos_x = (float)j + 0.5f;
-				data->pos_y = (float)i + 0.5f;
+				data->p_x = (float)j + 0.5f;
+				data->p_y = (float)i + 0.5f;
 				get_view(data, data->map[i][j]);
 				return ;
 			}

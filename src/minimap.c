@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   minimap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/09 16:30:28 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/10 16:57:45 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/10 17:48:49 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ static int	get_mini_color(t_data *data, int i, int j)
 
 	if ((size_t)i >= ft_strlen(data->map[j]))
 		return (0);
-	x = (int)(data->pos_x);
-	y = (int)(data->pos_y);
+	x = (int)(data->p_x);
+	y = (int)(data->p_y);
 	if (i == x && j == y)
 		return (MINIMAP_PLAYER);
 	if (data->map[j][i] == '1')
