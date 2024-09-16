@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   handle_key.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/29 14:27:45 by akurochk          #+#    #+#             */
-/*   Updated: 2024/09/11 12:57:18 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/16 13:04:59 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,13 @@ static void	move(t_data *data, int dir)
 static void	rotate(t_data *data, int dir)
 {
 	if (dir == 1 || dir == -1)
+	{
 		data->dir_v += -dir * SPEED_R * M_PI;
+		if (data->dir_v > 2 * M_PI)
+			data->dir_v -= 2 * M_PI;
+		if (data->dir_v < -2 * M_PI)
+			data->dir_v += 2 * M_PI;
+	}
 }
 
 int	handle_key(int key, t_data *data)

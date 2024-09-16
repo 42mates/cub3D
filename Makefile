@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mbecker <marvin@42.fr>                     +#+  +:+       +#+         #
+#    By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/08/28 15:03:26 by mbecker           #+#    #+#              #
-#    Updated: 2024/09/10 18:37:05 by mbecker          ###   ########.fr        #
+#    Updated: 2024/09/16 13:15:45 by akurochk         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,7 +31,8 @@ SRC =	src/parsing/parsing.c \
 		src/init.c \
 		src/main.c \
 		src/minimap.c \
-		src/ray_casting.c 
+		src/ray_casting.c \
+		src/mouse_bonus.c
 
 all: $(NAME)
 
@@ -58,6 +59,8 @@ fclean: clean
 
 re: fclean all
 
+bonus: all
+
 libft:
 	@if [ ! -f libft/libft.a ]; then make -C ./libft all; fi
 
@@ -71,7 +74,7 @@ mlx:
 		make -C ./minilibx-linux all >/dev/null 2>&1; \
 	fi
 
-.PHONY : all clean fclean re libft
+.PHONY : all clean fclean re bonus libft 
 
 RED =\033[1;31m
 LRED =\033[0;31m
