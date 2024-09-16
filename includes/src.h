@@ -6,7 +6,7 @@
 /*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/05 11:03:57 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/10 17:33:44 by akurochk         ###   ########.fr       */
+/*   Updated: 2024/09/16 13:14:10 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,10 @@ void	ray_casting(t_data *data);
 /*********** PARSING.C        ***********/
 int		error(char *str, char *str2);
 int		parsing(int ac, char **av, t_data *data);
+
+/*********** MOUSE_BONUS.C    ***********/
+int		handle_mouse_d(int button, int x, int y, t_data *data);
+int		handle_mouse_m(int x, int y, t_data *data);
+int		handle_mouse_u(int button, int x, int y, t_data *data);
 
 #endif

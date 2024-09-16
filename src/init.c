@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/10 12:14:47 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/11 12:55:28 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/16 12:48:38 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@ int	init_data(t_data *data)
 	data->mini_scale = MINIMAP_SCALE;
 	data->win = NULL;
 	data->mlx = mlx_init();
+	data->mouse_down = 0;
+	data->mouse_x = 0;
 	if (!data->mlx)
 		return (free_data(data), 1);
 	if (init_img(data))

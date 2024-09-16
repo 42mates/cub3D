@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mbecker <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: akurochk <akurochk@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/08/28 15:15:39 by mbecker           #+#    #+#             */
-/*   Updated: 2024/09/11 13:19:24 by mbecker          ###   ########.fr       */
+/*   Updated: 2024/09/16 13:14:10 by akurochk         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,9 @@ int	main(int ac, char **av)
 	draw(&data);
 	mlx_hook(data.win, ON_KEYDOWN, KeyPressMask, handle_key, &data);
 	mlx_hook(data.win, ON_DESTROY, NoEventMask, handle_destroy, &data);
+	mlx_hook(data.win, ON_MOUSEDOWN, ButtonPressMask, handle_mouse_d, &data);
+	mlx_hook(data.win, ON_MOUSEMOVE, PointerMotionMask, handle_mouse_m, &data);
+	mlx_hook(data.win, ON_MOUSEUP, ButtonReleaseMask, handle_mouse_u, &data);
 	mlx_loop(data.mlx);
 	return (0);
 }
