@@ -17,7 +17,7 @@ Every time the user moves, a new image is created from the `ray_casting()` funct
 
 ## User Experience
 
-The game is controlled using the `←` and `→` keys for directionor `W`, `A`, `S`, `D` for movement. The goal of the game is to navigate through a 3D map. The program exits by pressing `Esc` or by clicking the window's `x` button.
+The game is controlled using the `←` and `→` keys or by using the mouse for direction and `W`, `A`, `S`, `D` for movement. The goal of the game is to navigate through a 3D map. The program exits by pressing `Esc` or by clicking the window's `❌` button.
 
 
 ## Features
